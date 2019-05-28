@@ -4,6 +4,7 @@ import { Layout, Menu, Icon, Row, Col, Badge, PageHeader } from "antd";
 import logo from "../../Assets/images/logo.png";
 import "antd/dist/antd.css";
 import "../../Assets/css/SideNav.css";
+import Dashboard from "../QA/Dashboard";
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -130,7 +131,9 @@ class SiderNav extends React.Component {
               background: "#fff",
               minHeight: 600
             }}
-          />
+          >
+            <Dashboard />
+          </Content>
         </Layout>
       </Layout>
     );

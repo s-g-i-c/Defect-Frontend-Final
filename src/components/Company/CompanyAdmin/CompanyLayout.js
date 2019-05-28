@@ -6,6 +6,7 @@ import "antd/dist/antd.css";
 import "../../Assets/css/SideNav.css";
 import CompanyMain from "./ManageCompany";
 import Profile from "../../User/Profile";
+import Dashboard from "./Dashboard";
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -37,11 +38,12 @@ class SiderNav extends React.Component {
             <Menu theme="dark " mode="inline" defaultSelectedKeys={["1"]}>
               <Menu.Item key="1">
                 <Icon type="windows" />
-                <Link to={`/Manage`} />
+                <Link to={`/Dashboard`} />
                 <span>Dashboard</span>
               </Menu.Item>
               <Menu.Item key="2">
                 <Icon type="folder-add" />
+                <Link to={`/Manage`} />
                 <span>Test</span>
               </Menu.Item>
               <Menu.Item key="3">
@@ -133,9 +135,10 @@ class SiderNav extends React.Component {
                 margin: "34px 16px",
                 padding: 14,
                 background: "#fff",
-                minHeight: 600
+                minHeight: 700
               }}
             >
+              <Route path="/Dashboard" component={Dashboard} />
               <Route path="/Manage" component={CompanyMain} />
               <Route path="/profile" component={Profile} />
             </Content>
