@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Row, Col, Card, Icon, Progress } from 'antd'
+import { Row, Col, Card, Icon, Progress, Button } from 'antd'
 import {Pie} from 'react-chartjs-2'
 import  '../../App.css'
 
@@ -28,6 +28,15 @@ export default class Dashboard extends Component {
     render() {
         return (
             <div>
+                <Row>
+                    <Col style={{textAlign: 'right'}}>
+                        <Button type="default">
+                        <Icon type="setting" />
+                        Configuration
+                        </Button>
+                    </Col>
+                </Row>
+                <Row>&nbsp;</Row>
                 <Row gutter={16}>
                     <Col span={10}>
                         <Row gutter={6}>
