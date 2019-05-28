@@ -1,8 +1,9 @@
 import React from "react";
 
-import { Layout, Menu, Icon, Row, Col, Badge } from "antd";
+import { Layout, Menu, Icon, Row, Col, Badge, PageHeader } from "antd";
 import logo from "../../Assets/images/logo.png";
 import "antd/dist/antd.css";
+import "../CompanyAdmin/SideNav.css";
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -28,25 +29,25 @@ class SiderNav extends React.Component {
           onCollapse={this.toggle}
         >
           <div className="logo">
-            <img src={logo} padding="10" width="65px" />{" "}
+            <img src={logo} padding="10" width="65px" alt="logo" />
             <a href="/">Defect.T</a>
           </div>
           <Menu theme="dark " mode="inline" defaultSelectedKeys={["1"]}>
             <Menu.Item key="1">
-              <Icon type="dashboard" />
+              <Icon type="windows" />
               <span>Dashboard</span>
             </Menu.Item>
             <Menu.Item key="2">
-              <Icon type="video-camera" />
+              <Icon type="folder-add" />
               <span>Test</span>
             </Menu.Item>
             <Menu.Item key="3">
-              <Icon type="setting" />
+              <Icon type="robot" />
               <span>Defects</span>
             </Menu.Item>
             <Menu.Item key="4">
-              <Icon type="form" />
-              <span>Projects</span>
+              <Icon type="dingding" />
+              <span>Manage</span>
             </Menu.Item>
             <Menu.Item key="5">
               <Icon type="user" />
@@ -56,54 +57,6 @@ class SiderNav extends React.Component {
               <Icon type="plus" />
               <span>Manage</span>
             </Menu.Item>
-            <SubMenu
-              key="sub1"
-              title={
-                <span>
-                  <Icon type="sketch" />
-                  <span>Nav Expand</span>
-                </span>
-              }
-            >
-              <Menu.Item key="1">
-                <Icon type="file-add" />
-                Add
-              </Menu.Item>
-              <Menu.Item key="2">
-                <Icon type="alert" />
-                Manage
-              </Menu.Item>
-              <Menu.Item key="3">
-                <Icon type="export" />
-                Test
-              </Menu.Item>
-              <Menu.Item key="4">
-                <Icon type="tag" />
-                Test
-              </Menu.Item>
-            </SubMenu>
-            <SubMenu
-              key="sub2"
-              title={
-                <span>
-                  <Icon type="sketch" />
-                  <span>Company Admin</span>
-                </span>
-              }
-            >
-              <Menu.Item key="7">
-                <Icon type="dashboard" />
-                Dashboard
-              </Menu.Item>
-              <Menu.Item key="8">
-                <Icon type="user" />
-                Employees Management
-              </Menu.Item>
-              <Menu.Item key="9">
-                <Icon type="form" />
-                Project Management
-              </Menu.Item>
-            </SubMenu>
           </Menu>
         </Sider>
         <Layout
@@ -118,7 +71,13 @@ class SiderNav extends React.Component {
           >
             <Row gutter={16}>
               <Col className="gutter-row" span={6}>
-                <div className="gutter-box" />
+                <div className="gutter-box">
+                  <PageHeader
+                    onBack={() => null}
+                    title="Company"
+                    subTitle="Admin"
+                  />
+                </div>
               </Col>
               <Col className="gutter-row" span={6}>
                 <div className="gutter-box" />
@@ -135,7 +94,6 @@ class SiderNav extends React.Component {
                   <Menu.Item key="setting:11">
                     <Badge count={0} showZero>
                       <Icon type="bell" />
-                      <a href="#" className="head-example" />
                     </Badge>
                   </Menu.Item>
                   <SubMenu
@@ -171,7 +129,7 @@ class SiderNav extends React.Component {
               margin: "34px 16px",
               padding: 14,
               background: "#fff",
-              minHeight: 500
+              minHeight: 600
             }}
           />
         </Layout>
