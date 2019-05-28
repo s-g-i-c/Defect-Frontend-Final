@@ -1,4 +1,4 @@
-import React from "./node_modules/react";
+import React from "react";
 
 import {
   Layout,
@@ -8,10 +8,11 @@ import {
   Col,
   Badge,
   PageHeader
-} from "./node_modules/antd";
+} from "antd";
 import logo from "../../Assets/images/logo.png";
-import "./node_modules/antd/dist/antd.css";
-import "../Assets/css/SideNav.css";
+import "../../../../node_modules/antd/dist/antd.css";
+import "../../Assets/css/SideNav.css";
+import Dashboard from "./Dashboard";
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -139,7 +140,9 @@ class PMLayout extends React.Component {
               background: "#fff",
               minHeight: 600
             }}
-          />
+          >
+            <Dashboard />
+          </Content>
         </Layout>
       </Layout>
     );
