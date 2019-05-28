@@ -104,7 +104,7 @@ class CompanyMain extends React.Component {
 
         render: () => (
           <span>
-            <a onClick={this.showDrawer} style={{ color: "blue" }}>
+            <a onClick={this.showDrawer} style={{ color: "blue" }} href="#">
               <Icon type="edit" className="datatable-icon" />
               &nbsp;View
             </a>
@@ -135,7 +135,7 @@ class CompanyMain extends React.Component {
 
     return (
       <React.Fragment>
-        <div style={{ padding: 4, background: "#fff", minHeight: 360 }}>
+        <div style={{ padding: 4, background: "#f5f5f5;", minHeight: 360 }}>
           <Button type="primary" onClick={this.showDrawer}>
             <Icon type="plus" />
             Add Company
@@ -147,7 +147,7 @@ class CompanyMain extends React.Component {
         <div>
           <Drawer
             title="CREATE NEW COMPANY"
-            width={720}
+            width={"60%"}
             onClose={this.onClose}
             visible={this.state.visible}
           >
