@@ -6,7 +6,7 @@ import "antd/dist/antd.css";
 // import ProductAdminLayout from "./components/ProductAdmin/ProductAdminLayout";
 // import PMLayout from './components/Company/PM/PMLayout'
 // import PMLayout from "./components/Company/PM/PMLayout";
-import CommonLayout from './components/Company/CommonDashboards/CommonLayout'
+// import CommonLayout from './components/Company/CommonDashboards/CommonLayout'
 import Main from "./components/MainPanel/Main";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
       {/* <PMLayout />   */}
       {/* <CompanyLayout /> */}
       {/* <PMLayout /> */}
-      <CommonLayout />
+      {/* <CommonLayout /> */}
       <Main />
     </div>
   );

@@ -1,11 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import { Layout, Menu, Icon, Row, Col, Badge, PageHeader } from "antd";
 import logo from "../../Assets/images/logo.png";
 import "antd/dist/antd.css";
 import "../../Assets/css/SideNav.css";
 import { TotalDefectCard, FixedDefectCard } from "./Dashboard";
-import Profile from "../../User/Profile";
+// import Profile from "../../User/Profile";
+// import Dashboard from "./Dashboard";
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -138,8 +139,9 @@ class SiderNav extends React.Component {
             >
               {/* <Route path="/Dashboard" component={Dashboard} />
               <Route path="/Profile" component={Profile} /> */}
-              <TotalDefectCard/>
-              <FixedDefectCard/>
+              <TotalDefectCard />
+              <br />
+              <FixedDefectCard />
             </Content>
           </Layout>
         </Layout>
