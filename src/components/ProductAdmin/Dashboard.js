@@ -1,6 +1,28 @@
 import React, { Component } from 'react'
-import { Row, Col, Card, Icon, Progress } from 'antd';
+import { Row, Col, Card, Icon, Progress } from 'antd'
+import {Pie} from 'react-chartjs-2'
 import  '../../App.css'
+
+const data = {
+    labels: [
+        'Red',
+        'Green',
+        'Yellow'
+    ],
+    datasets: [{
+        data: [300, 50, 100],
+        backgroundColor: [
+        '#FF6384',
+        '#36A2EB',
+        '#FFCE56'
+        ],
+        hoverBackgroundColor: [
+        '#FF6384',
+        '#36A2EB',
+        '#FFCE56'
+        ]
+    }]
+};      
 
 export default class Dashboard extends Component {
     render() {
@@ -71,16 +93,19 @@ export default class Dashboard extends Component {
                                 </Col>
                             </Card>
                         </Row>
+                        <Row>&nbsp;</Row>
+                        <Row>
+                            <Col span={24}>
+                                <Card title="Number of companies" bordered="true">
+                                    <span style={{ fontSize: '2.5rem' }}>10</span>
+                                </Card>            
+                            </Col>
+                        </Row>
                     </Col>
-                    <Col span={7}>
+                    <Col span={14}>
                         <Card bordered="true" title="License Chart">
-                        
+                            <Pie data={data} />                        
                         </Card>                        
-                    </Col>
-                    <Col span={7}>
-                        <Card bordered="true">
-                        
-                        </Card>                       
                     </Col>
                 </Row>
             </div>
