@@ -3,7 +3,7 @@ import React from "react";
 import { Layout, Menu, Icon, Row, Col, Badge, PageHeader } from "antd";
 import logo from "../../Assets/images/logo.png";
 import "antd/dist/antd.css";
-import "../CompanyAdmin/SideNav.css";
+import "../../Assets/css/SideNav.css";
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -11,7 +11,7 @@ const MenuItemGroup = Menu.ItemGroup;
 
 class SiderNav extends React.Component {
   state = {
-    collapsed: false
+    collapsed: true
   };
 
   toggle = () => {
@@ -30,7 +30,6 @@ class SiderNav extends React.Component {
         >
           <div className="logo">
             <img src={logo} padding="10" width="65px" alt="logo" />
-            <a href="/">Defect.T</a>
           </div>
           <Menu theme="dark " mode="inline" defaultSelectedKeys={["1"]}>
             <Menu.Item key="1">
@@ -74,8 +73,8 @@ class SiderNav extends React.Component {
                 <div className="gutter-box">
                   <PageHeader
                     onBack={() => null}
-                    title="Company"
-                    subTitle="Admin"
+                    title="Developer"
+                    subTitle="Main"
                   />
                 </div>
               </Col>

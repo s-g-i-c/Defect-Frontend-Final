@@ -1,9 +1,12 @@
 import React from "react";
-import SiderNav from "./components/Company/CompanyAdmin/SideNav";
+import CompanyLayout from "./components/Company/CompanyAdmin/CompanyLayout";
+// import DeveloperLayout from "./components/Company/Developer/DeveloperLayout";
+// import ProductAdminLayout from "./components/ProductAdmin/ProductAdminLayout";
+
 function App() {
   return (
-    <div className="App">
-      <SiderNav />
+    <div>
+      <CompanyLayout />
     </div>
   );
 }
