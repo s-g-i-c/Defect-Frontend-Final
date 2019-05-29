@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Row, Col, Button, Icon } from 'antd'
-import {Doughnut} from 'react-chartjs-2'
+import { Doughnut, Line } from 'react-chartjs-2'
 
 // Doughnut Data
 const data = {
@@ -31,6 +31,33 @@ const data = {
 	}]
 };
 
+//Radar data
+const lineData = {
+	labels: ['June 1', 'June 2', 'June 3', 'June 4', 'June 5', 'June 6', 'June 7'],
+	datasets: [
+	  {
+		label: 'Severity',
+		backgroundColor: 'rgba(179,181,198,0.2)',
+		borderColor: 'rgba(179,181,198,1)',
+		pointBackgroundColor: 'rgba(179,181,198,1)',
+		pointBorderColor: '#fff',
+		pointHoverBackgroundColor: '#fff',
+		pointHoverBorderColor: 'rgba(179,181,198,1)',
+		data: [65, 59, 90, 81, 56, 55, 40]
+	  },
+	  {
+		label: 'Priority',
+		backgroundColor: 'rgba(255,99,132,0.2)',
+		borderColor: 'rgba(255,99,132,1)',
+		pointBackgroundColor: 'rgba(255,99,132,1)',
+		pointBorderColor: '#fff',
+		pointHoverBackgroundColor: '#fff',
+		pointHoverBorderColor: 'rgba(255,99,132,1)',
+		data: [28, 48, 40, 19, 96, 27, 100]
+	  }
+	]
+};
+
 export default class Dashboard extends Component {
     render() {
         return (
@@ -52,13 +79,13 @@ export default class Dashboard extends Component {
 									bordered={true}
 									style={{
 										height: '100px',
-										background: 'linear-gradient(to right, #ffc500, #c21500)'
+										background: '#391085'
 									}}
 								>
 									<Row gutter={16}>
 										<Col span={12}>
-											<Row><span style={{ 'font-size': '1.5rem' }}>6</span></Row>
-											<Row>Assigned</Row>
+											<Row><span style={{ 'font-size': '1.5rem', color: '#d9d9d9' }}>6</span></Row>
+											<Row><span style={{ color: '#d9d9d9' }}>Assigned</span></Row>
 										</Col>
 										<Col span={12}>
 											<Icon type="frown" style={{ fontSize: '3rem', color: '#d9d9d9', opacity: '0.5' }} />
@@ -71,13 +98,13 @@ export default class Dashboard extends Component {
 									bordered={true}
 									style={{
 										height: '100px',
-										background: 'linear-gradient(to right, #ffe000, #799f0c)'
+										background: '#10239e'
 									}}
 								>
 									<Row gutter={16}>
 										<Col span={12}>
-											<Row><span style={{ 'font-size': '1.5rem' }}>4</span></Row>
-											<Row>Closed</Row>
+											<Row><span style={{ 'font-size': '1.5rem', color: '#d9d9d9' }}>4</span></Row>
+											<Row><span style={{ color: '#d9d9d9' }}>Closed</span></Row>
 										</Col>
 										<Col span={12}>
 											<Icon type="check-circle" style={{ fontSize: '3rem', color: '#d9d9d9', opacity: '0.5' }} />
@@ -90,13 +117,13 @@ export default class Dashboard extends Component {
 									bordered={true}
 									style={{
 										height: '100px',
-										background: 'linear-gradient(to right, #ffa751, #ffe259)'
+										background: '#1890ff'
 									}}
 								>
 									<Row gutter={16}>
 										<Col span={12}>
-											<Row><span style={{ 'font-size': '1.5rem' }}>1</span></Row>
-											<Row>Pending</Row>
+											<Row><span style={{ 'font-size': '1.5rem', color: '#d9d9d9' }}>1</span></Row>
+											<Row><span style={{ color: '#d9d9d9' }}>Pending</span></Row>
 										</Col>
 										<Col span={12}>
 											<Icon type="warning" style={{ fontSize: '3rem', color: '#d9d9d9', opacity: '0.5' }} />
@@ -109,13 +136,13 @@ export default class Dashboard extends Component {
 									bordered={true}
 									style={{
 										height: '100px',
-										background: 'linear-gradient(to right, #dad299, #b0dab9)'
+										background: '#9d00ff'
 									}}
 								>
 									<Row gutter={16}>
 										<Col span={12}>
-											<Row><span style={{ 'font-size': '1.5rem' }}>1</span></Row>
-											<Row>Deferred</Row>
+											<Row><span style={{ 'font-size': '1.5rem', color: '#d9d9d9' }}>1</span></Row>
+											<Row><span style={{ color: '#d9d9d9' }}>Deferred</span></Row>
 										</Col>
 										<Col span={12}>
 											<Icon type="close" style={{ fontSize: '3rem', color: '#d9d9d9', opacity: '0.5' }} />
@@ -123,6 +150,12 @@ export default class Dashboard extends Component {
 									</Row>
 								</Card>
 							</Col>
+						</Row>
+						<Row>&nbsp;</Row>
+						<Row gutter={16}>
+							<Card title="Severity vs Priority">
+								<Line data={lineData} />
+							</Card>
 						</Row>
 					</Col>
 					<Col span={6}>
