@@ -6,6 +6,7 @@ import "antd/dist/antd.css";
 import "../Assets/css/SideNav.css";
 import Dashboard from "./Dashboard";
 import Profile from "../User/Profile";
+import ManageCompanies from "./ManageCompanies";
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -36,29 +37,14 @@ class SiderNav extends React.Component {
             </div>
             <Menu theme="dark " mode="inline" defaultSelectedKeys={["1"]}>
               <Menu.Item key="1">
+                <Link to={`/ProductAdminLayout/Dashboard`} />
                 <Icon type="windows" />
-                <Link to={`/Dashboard`} />
                 <span>Dashboard</span>
               </Menu.Item>
               <Menu.Item key="2">
+                <Link to={`/ManageCompanies`} />
                 <Icon type="folder-add" />
-                <span>Test</span>
-              </Menu.Item>
-              <Menu.Item key="3">
-                <Icon type="robot" />
-                <span>Defects</span>
-              </Menu.Item>
-              <Menu.Item key="4">
-                <Icon type="dingding" />
-                <span>Manage</span>
-              </Menu.Item>
-              <Menu.Item key="5">
-                <Icon type="user" />
-                <span>Users</span>
-              </Menu.Item>
-              <Menu.Item key="6">
-                <Icon type="plus" />
-                <span>Manage</span>
+                <span>ManageCompanies</span>
               </Menu.Item>
             </Menu>
           </Sider>
@@ -136,8 +122,12 @@ class SiderNav extends React.Component {
                 minHeight: 700
               }}
             >
-              <Route path="/Dashboard" component={Dashboard} />
+              <Route
+                path="/ProductAdminLayout/Dashboard"
+                component={Dashboard}
+              />
               <Route path="/Profile" component={Profile} />
+              <Route path="/ManageCompanies" component={ManageCompanies} />
             </Content>
           </Layout>
         </Layout>
