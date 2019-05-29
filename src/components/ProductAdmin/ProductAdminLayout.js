@@ -34,6 +34,7 @@ class SiderNav extends React.Component {
           >
             <div className="logo">
               <img src={logo} padding="10" width="65px" alt="logo" />
+              <a href="/">Defect.T</a>
             </div>
             <Menu theme="dark " mode="inline" defaultSelectedKeys={["1"]}>
               <Menu.Item key="1">
@@ -63,7 +64,7 @@ class SiderNav extends React.Component {
                   <div className="gutter-box">
                     <PageHeader
                       onBack={() => null}
-                      title="Company"
+                      title="Product"
                       subTitle="Admin"
                     />
                   </div>

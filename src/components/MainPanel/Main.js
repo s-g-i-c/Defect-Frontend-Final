@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Avatar, Card, Row, Col } from "antd";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import ProductAdminLayout from "../ProductAdmin/ProductAdminLayout";
+import CompanyAdminLayout from "../Company/CompanyAdmin/CompanyLayout";
+import PMLayout from "../Company/PM/PMLayout";
 class Main extends Component {
   render() {
     return (
@@ -14,7 +16,12 @@ class Main extends Component {
                 exact
                 component={ProductAdminLayout}
               />
-
+              <Route
+                path="/CompanyAdminLayout/Dashboard"
+                exact
+                component={CompanyAdminLayout}
+              />
+              <Route path="/PMLayout/Dashboard" exact component={PMLayout} />
               <Col span={24}>
                 <Card
                   title="SELECT FOR LOGIN "
@@ -70,6 +77,9 @@ class Main extends Component {
                         }}
                         icon="user"
                       />
+                      <Link push to={`/CompanyAdminLayout/Dashboard`}>
+                        CompanyAdmin
+                      </Link>
                     </Col>
                     &nbsp;
                     <Col span={4}>
@@ -97,6 +107,9 @@ class Main extends Component {
                         icon="user"
                       />
                     </Col>
+                    <Link push to={`/PMLayout/Dashboard`}>
+                      Project Manger
+                    </Link>
                     &nbsp;
                   </Row>
                 </Card>

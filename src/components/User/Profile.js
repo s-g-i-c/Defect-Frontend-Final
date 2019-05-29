@@ -55,7 +55,10 @@ class Profile extends Component {
           <Col span={7}>
             <Divider>Update </Divider>
             <Avatar
-              style={{ margin: "16px 0 0  85px" }}
+              style={{
+                margin: "16px 0 0  85px",
+                background: "linear-gradient(to right, #7474bf, #348ac7)"
+              }}
               size={164}
               icon="user"
             />
