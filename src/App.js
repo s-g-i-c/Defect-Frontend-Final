@@ -5,8 +5,14 @@ import "antd/dist/antd.css";
 // import DeveloperLayout from "./components/Company/Developer/DeveloperLayout";
 import ProductAdminLayout from "./components/ProductAdmin/ProductAdminLayout";
 // import PMLayout from "./components/Company/PM/PMLayout";
+<<<<<<< HEAD
 // import CommonLayout from "./components/Company/CommonDashboards/CommonLayout";
 // import Main from "./components/MainPanel/Main";
+=======
+// import CommonLayout from './components/Company/CommonDashboards/CommonLayout'
+// import Main from "./components/MainPanel/Main";
+import Login from "./components/User/Login";
+>>>>>>> d5bd11f173a75de15c2cd02965c55e714bebb830
 
 function App() {
   return (
@@ -16,9 +22,15 @@ function App() {
       <ProductAdminLayout />
       {/* <CompanyLayout /> */}
       {/* <PMLayout /> */}
+<<<<<<< HEAD
       {/* <CompanyLayout /> */}
       {/* <CommonLayout />  */}
       {/* <Main /> */}
+=======
+      {/* <CommonLayout /> */}
+      {/* <Main /> */}
+      <Login />
+>>>>>>> d5bd11f173a75de15c2cd02965c55e714bebb830
     </div>
   );
 }
