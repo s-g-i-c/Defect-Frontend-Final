@@ -87,54 +87,69 @@ export default class Dashboard extends Component {
                 </Col>
                 <Col span={16}>
                   <Row>
-                    <Progress
-                      percent={80}
-                      status="active"
-                      strokeColor={{
-                        "0%": "#57bb8a",
-                        "100%": "#57bb8a"
-                      }}
-                    />
+                    <Col span={1}>5</Col>
+                    <Col span={23}>
+                      <Progress
+                        percent={80}
+                        status="active"
+                        strokeColor={{
+                          "0%": "#57bb8a",
+                          "100%": "#57bb8a"
+                        }}
+                      />
+                    </Col>
                   </Row>
                   <Row>
-                    <Progress
-                      percent={60}
-                      status="active"
-                      strokeColor={{
-                        "0%": "#9ace6a",
-                        "100%": "#9ace6a"
-                      }}
-                    />
+                    <Col span={1}>4</Col>
+                    <Col span={23}>
+                      <Progress
+                        percent={60}
+                        status="active"
+                        strokeColor={{
+                          "0%": "#9ace6a",
+                          "100%": "#9ace6a"
+                        }}
+                      />
+                    </Col>
                   </Row>
                   <Row>
-                    <Progress
-                      percent={90}
-                      status="active"
-                      strokeColor={{
-                        "0%": "#ffcf02",
-                        "100%": "#ffcf02"
-                      }}
-                    />
+                    <Col span={1}>3</Col>
+                    <Col span={23}>
+                      <Progress
+                        percent={90}
+                        status="active"
+                        strokeColor={{
+                          "0%": "#ffcf02",
+                          "100%": "#ffcf02"
+                        }}
+                      />
+                    </Col>
                   </Row>
                   <Row>
-                    <Progress
-                      percent={20}
-                      status="active"
-                      strokeColor={{
-                        "0%": "#ff9f02",
-                        "100%": "#ff9f02"
-                      }}
-                    />
+                    <Col span={1}>2</Col>
+                    <Col span={23}>
+                      <Progress
+                        percent={20}
+                        status="active"
+                        strokeColor={{
+                          "0%": "#ff9f02",
+                          "100%": "#ff9f02"
+                        }}
+                      />
+                    </Col>
                   </Row>
                   <Row>
-                    <Progress
-                      percent={10}
-                      status="active"
-                      strokeColor={{
-                        "0%": "#ff6f31",
-                        "100%": "#ff6f31"
-                      }}
-                    />
+                    <Col span={1}>1</Col>
+                    <Col span={23}>
+                      <Progress
+                        percent={10}
+                        status="active"
+                        strokeColor={{
+                          "0%": "#ff6f31",
+                          "100%": "#ff6f31"
+                        }}
+                      />
+                    </Col>
                   </Row>
                 </Col>
               </Card>

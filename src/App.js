@@ -19,7 +19,7 @@ function App() {
       {/* <DeveloperLayout /> */}
       <ProductAdminLayout />
       {/* <CompanyLayout /> */}
-      <PMLayout />
+      {/* <PMLayout /> */}
       {/* <CommonLayout /> */}
       {/* <Main /> */}
       {/* <ProductAdminLayout /> */}
@@ -29,7 +29,7 @@ function App() {
       {/* <Main /> */}
       {/* <Login /> */}
       {/* <CommonLayout /> */}
-      <Login />
+      {/* <Login /> */}
     </div>
   );
 }
