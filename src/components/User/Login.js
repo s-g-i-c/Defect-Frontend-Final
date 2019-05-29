@@ -2,17 +2,7 @@ import React, { Component } from "react";
 
 import "antd/dist/antd.css";
 
-import {
-  Form,
-  Row,
-  Avatar,
-  Checkbox,
-  Card,
-  Col,
-  Input,
-  Button,
-  Icon
-} from "antd";
+import { Form, Avatar, Checkbox, Card, Input, Button, Icon } from "antd";
 
 export default class AdvancedSearchForm extends Component {
   handleSubmit = e => {
@@ -42,7 +32,7 @@ export default class AdvancedSearchForm extends Component {
             width: 400
           }}
         >
-          <h1 style={{ color: "#348AC7" }}>LOGIN</h1>
+          <h2 style={{ color: "#348AC7" }}>DEFECT TRACKER</h2>
           <Avatar
             size={120}
             icon="user"
@@ -85,7 +75,7 @@ export default class AdvancedSearchForm extends Component {
                 Log in
               </Button>
               <br />
-              <a className="login-form-forgot" href="">
+              <a className="login-form-forgot" href="cc">
                 Forgot password
               </a>
             </Form.Item>

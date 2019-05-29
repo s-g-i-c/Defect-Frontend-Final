@@ -47,8 +47,30 @@ class Profile extends Component {
               </Row>
 
               <Row>
-                <Button type="primary">Save Changes</Button>&nbsp;
-                <Button>Cancel</Button>
+                <Button
+                  icon="check"
+                  type="primary"
+                  style={{
+                    size: "50%",
+                    borderRadius: "15px 0 15px 0"
+                  }}
+                >
+                  Update Changes
+                </Button>
+                &nbsp;
+                <Button
+                  type="danger"
+                  icon="close"
+                  onClick={this.onClose}
+                  style={{
+                    size: "50%",
+                    borderRadius: "15px 0 15px 0",
+                    background: "#cc104b",
+                    color: "#FFF"
+                  }}
+                >
+                  Cancel Changes
+                </Button>
               </Row>
             </Col>
           </Col>

@@ -289,7 +289,8 @@ class CompanyMain extends React.Component {
                       getPopupContainer={trigger => trigger.parentNode}
                       style={{
                         border: "1px solid #719ECE",
-                        borderRadius: "4px"
+                        borderRadius: "4px",
+                        width: "100%"
                       }}
                     />
                   </Form.Item>
@@ -297,7 +298,7 @@ class CompanyMain extends React.Component {
                 <Col span={12}>
                   <Dragger {...props} style={{ height: "30%" }}>
                     <p className="ant-upload-drag-icon">
-                      <Icon type="inbox" />
+                      <Icon type="inbox" size="10px" />
                     </p>
                     <p className="ant-upload-text">
                       Click or drag Agreement Files

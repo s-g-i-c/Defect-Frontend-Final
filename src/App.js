@@ -4,7 +4,7 @@ import "antd/dist/antd.css";
 // import QALayout from "./components/Company/QA/QALayout";
 // import DeveloperLayout from "./components/Company/Developer/DeveloperLayout";
 // import ProductAdminLayout from "./components/ProductAdmin/ProductAdminLayout";
-import PMLayout from './components/Company/PM/PMLayout'
+// import PMLayout from './components/Company/PM/PMLayout'
 // import ProductAdminLayout from "./components/ProductAdmin/ProductAdminLayout";
 // import ProductAdminLayout from "./components/ProductAdmin/ProductAdminLayout";
 // import PMLayout from "./components/Company/PM/PMLayout";
@@ -20,14 +20,14 @@ function App() {
       {/* <DeveloperLayout /> */}
       {/* <ProductAdminLayout /> */}
       {/* <CompanyLayout /> */}
-      <PMLayout />
+      {/* <PMLayout /> */}
       {/* <CommonLayout /> */}
       {/* <Main /> */}
       {/* <ProductAdminLayout /> */}
       {/* <PMLayout /> */}
       {/* <CompanyLayout /> */}
       {/* <CommonLayout /> */}
-      {/* <Main /> */}
+      <Main />
       {/* <Login /> */}
       {/* <CommonLayout /> */}
       {/* <Login /> */}
