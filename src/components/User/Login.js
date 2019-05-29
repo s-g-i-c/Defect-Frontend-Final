@@ -5,14 +5,6 @@ import "antd/dist/antd.css";
 import { Form, Avatar, Checkbox, Card, Input, Button, Icon } from "antd";
 
 export default class AdvancedSearchForm extends Component {
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        console.log("Received values of form: ", values);
-      }
-    });
-  };
   render() {
     return (
       <div
@@ -70,12 +62,24 @@ export default class AdvancedSearchForm extends Component {
                 type="primary"
                 htmlType="submit"
                 className="login-form-button"
-                style={{ size: "50%", borderRadius: "10px 0 10px 0" }}
+                style={{
+                  size: "100%",
+                  width: "150px",
+                  borderRadius: "10px 0 10px 0"
+                }}
               >
-                Log in
+                <a
+                  className="login-form-forgot"
+                  href="/main"
+                  style={{ color: "#FFF" }}
+                >
+                  Login
+                </a>
               </Button>
               <br />
-              <a className="login-form-forgot" href="cc">
+
+              <br />
+              <a className="login-form-forgot" href="/main">
                 Forgot password
               </a>
             </Form.Item>

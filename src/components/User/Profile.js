@@ -49,7 +49,7 @@ class Profile extends Component {
               <Row>Bio</Row>
               <Row>
                 <Form.Item>
-                  <TextArea rows="1.5" />
+                  <TextArea rows="1.5" placeholder="Enter Bio !!!" />
                 </Form.Item>
               </Row>
 

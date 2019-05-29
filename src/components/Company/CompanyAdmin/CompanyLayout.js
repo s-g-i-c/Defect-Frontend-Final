@@ -7,7 +7,6 @@ import "../../Assets/css/SideNav.css";
 import CompanyMain from "./ManageCompany";
 import Profile from "../../User/Profile";
 import Dashboard from "./Dashboard";
-import Main from "../../MainPanel/Main";
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -105,9 +104,9 @@ class SiderNav extends React.Component {
                         </Menu.Item>
 
                         <Menu.Item key="setting:3">
-                          <Link to="/b" />
                           <Icon type="logout" />
                           Logout
+                          <Link to={`/main`} />
                         </Menu.Item>
                       </MenuItemGroup>
                     </SubMenu>
@@ -134,7 +133,6 @@ class SiderNav extends React.Component {
               />
               <Route path="/Manage" component={CompanyMain} />
               <Route path="/profile" component={Profile} />
-              <Route path="/b" component={Main} />
             </Content>
           </Layout>
         </Layout>

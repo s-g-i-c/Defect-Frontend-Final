@@ -7,6 +7,7 @@ import "../../Assets/css/SideNav.css";
 import { TotalDefectCard, FixedDefectCard } from "./Dashboard";
 // import Profile from "../../User/Profile";
 // import Dashboard from "./Dashboard";
+import Routes from "../../User/Routes";
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -117,6 +118,7 @@ class SiderNav extends React.Component {
                         <Menu.Item key="setting:3">
                           <Icon type="logout" />
                           Logout
+                          <Link to={`/`} />
                         </Menu.Item>
                       </MenuItemGroup>
                     </SubMenu>
