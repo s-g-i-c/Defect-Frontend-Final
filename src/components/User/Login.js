@@ -25,9 +25,14 @@ export default class AdvancedSearchForm extends Component {
   };
   render() {
     return (
-      <div align="center" style={{ background: "#FFF", padding: "30px" }}>
+      <div
+        align="center"
+        style={{
+          background: "linear-gradient(to right, #7474bf, #348ac7)",
+          padding: "133px"
+        }}
+      >
         <Card
-          title="LOGIN"
           bordered={true}
           style={{
             borderRadius: "50px 0 50px 0",
@@ -37,7 +42,14 @@ export default class AdvancedSearchForm extends Component {
             width: 400
           }}
         >
-          <Avatar size={120} icon="user" />
+          <h1 style={{ color: "#348AC7" }}>LOGIN</h1>
+          <Avatar
+            size={120}
+            icon="user"
+            style={{
+              background: "linear-gradient(to right, #7474bf, #348ac7)"
+            }}
+          />
           <br />
           &nbsp;
           <Form onSubmit={this.handleSubmit} className="login-form">
@@ -63,17 +75,19 @@ export default class AdvancedSearchForm extends Component {
             <Form.Item>
               <Checkbox>Remember me</Checkbox>
               <br />
-              <a className="login-form-forgot" href="">
-                Forgot password
-              </a>
-              <br />
+
               <Button
                 type="primary"
                 htmlType="submit"
                 className="login-form-button"
+                style={{ size: "50%", borderRadius: "10px 0 10px 0" }}
               >
                 Log in
               </Button>
+              <br />
+              <a className="login-form-forgot" href="">
+                Forgot password
+              </a>
             </Form.Item>
           </Form>
           {/* <p>Card content</p>
