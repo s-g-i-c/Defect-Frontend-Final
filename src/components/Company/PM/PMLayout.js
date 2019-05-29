@@ -6,6 +6,7 @@ import "../../../../node_modules/antd/dist/antd.css";
 import "../../Assets/css/SideNav.css";
 import Dashboard from "./Dashboard";
 import Profile from "../../User/Profile";
+import ManageProjects from "../PM/ManageProjects";
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -44,6 +45,7 @@ class PMLayout extends React.Component {
               <Menu.Item key="2">
                 <Icon type="dingding" />
                 <span>Manage Projects</span>
+                <Link to="/ManageProjects" />
               </Menu.Item>
             </Menu>
           </Sider>
@@ -122,6 +124,7 @@ class PMLayout extends React.Component {
               }}
             >
               <Route path="/PMLayout/Dashboard" component={Dashboard} />
+              <Route path="/Manageprojects" component={ManageProjects} />
               <Route path="/profile" component={Profile} />
             </Content>
           </Layout>

@@ -90,6 +90,22 @@ class CompanyMain extends React.Component {
         abbreviation: "mithra",
         period: "2Year",
         admin: "Tyron"
+      },
+      {
+        key: "id",
+        id: "C678",
+        name: "Samuel Gnanam",
+        abbreviation: "Sgic",
+        period: "1Year",
+        admin: "Mathan"
+      },
+      {
+        key: "id",
+        id: "C452",
+        name: "Invicta Inovations",
+        abbreviation: "Invicta",
+        period: "1Year",
+        admin: "Theepan"
       }
     ];
     const columns = [

@@ -4,6 +4,7 @@ import React, { Component } from "react";
 
 class Profile extends Component {
   render() {
+    const { TextArea } = Input;
     return (
       <div>
         <Row>
@@ -43,6 +44,12 @@ class Profile extends Component {
                     type="password"
                     placeholder=" Enter Confirm Password !"
                   />
+                </Form.Item>
+              </Row>
+              <Row>Bio</Row>
+              <Row>
+                <Form.Item>
+                  <TextArea rows="1.5" />
                 </Form.Item>
               </Row>
 
