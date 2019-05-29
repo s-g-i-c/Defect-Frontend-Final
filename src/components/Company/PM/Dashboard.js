@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Line} from 'react-chartjs-2';
+import {Line, CrazyLine, Radar, HorizontalBar} from 'react-chartjs-2';
 import { Row, Col, Card, Button, Icon, Progress } from 'antd'
 
 const data = {
@@ -94,8 +94,8 @@ export default class Dashboard extends Component {
                     <Col span={6}>
                         <Card>
                             <Row>
-                                <Icon type="user" />
-                                <span> Total QA Assigned</span>
+                                <Icon type="line-chart" />
+                                <span> Success Ratio</span>
                             </Row>
                             <Row>
                                 <span style={{ fontSize: '3rem', fontWeight: 'bold' }}>3</span>
@@ -105,6 +105,19 @@ export default class Dashboard extends Component {
                                     <Icon type="caret-down" /> 1%
                                 </span> From last week
                             </Row>
+                        </Card>
+                    </Col>
+                </Row>
+                <Row>&nbsp;</Row>
+                <Row gutter={16}>
+                    <Col span={12}>
+                        <Card title="Success Ratio">
+                            <HorizontalBar data={data} />
+                        </Card>
+                    </Col>
+                    <Col span={12}>
+                        <Card title="Some Ratio related to Project Manager">
+                            <Radar data={data} />
                         </Card>
                     </Col>
                 </Row>
@@ -120,12 +133,12 @@ export default class Dashboard extends Component {
                     </Row>
                     <Row>
                         <Col span={16}>
-                            <Card>
+                            <Card style={{ height: '450px' }}>
                                 <Line data={data} />
                             </Card>
                         </Col>
                         <Col span={8}>
-                            <Card>
+                            <Card style={{ height: '450px' }}>
                                 <span>Total Defects</span>
                                 <Progress percent={30} />
                                 <span>New Defects</span>
