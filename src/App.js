@@ -9,7 +9,7 @@ import ProductAdminLayout from "./components/ProductAdmin/ProductAdminLayout";
 // import Main from "./components/MainPanel/Main";
 // import CommonLayout from './components/Company/CommonDashboards/CommonLayout'
 // import Main from "./components/MainPanel/Main";
-import Login from "./components/User/Login";
+// import Login from "./components/User/Login";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
       {/* <Main /> */}
       {/* <CommonLayout /> */}
       {/* <Main /> */}
-      <Login />
+      {/* <Login /> */}
     </div>
   );
 }
