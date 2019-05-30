@@ -70,7 +70,7 @@ export default class AdvancedSearchForm extends Component {
               >
                 <a
                   className="login-form-forgot"
-                  href="/main"
+                  href="/maincc"
                   style={{ color: "#FFF" }}
                 >
                   Login

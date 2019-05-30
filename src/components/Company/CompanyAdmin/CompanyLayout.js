@@ -8,6 +8,7 @@ import CompanyMain from "./ManageCompany";
 import Profile from "../../User/Profile";
 import Dashboard from "./Dashboard";
 import Privillages from "./Privillages";
+import Config from "../CompanyConfiguration/Config";
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -51,8 +52,13 @@ class SiderNav extends React.Component {
               </Menu.Item>
               <Menu.Item key="setting:2">
                 <Link to={`/privillages`} />
-                <Icon type="setting" />
+                <Icon type="user" />
                 <span>Privillages</span>
+              </Menu.Item>
+              <Menu.Item key="setting14">
+                <Link to={`/Config`} />
+                <Icon type="setting" />
+                <span>Configuration</span>
               </Menu.Item>
             </Menu>
           </Sider>
@@ -139,6 +145,7 @@ class SiderNav extends React.Component {
               <Route path="/Managec" component={CompanyMain} />
               <Route path="/profile" component={Profile} />
               <Route path="/privillages" component={Privillages} />
+              <Route path="/Config" component={Config} />
             </Content>
           </Layout>
         </Layout>

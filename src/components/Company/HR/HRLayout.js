@@ -72,8 +72,8 @@ class SiderNav extends React.Component {
                   <div className="gutter-box">
                     <PageHeader
                       onBack={() => null}
-                      title="Company"
-                      subTitle="Admin"
+                      title="HR"
+                      subTitle="Manage"
                     />
                   </div>
                 </Col>
