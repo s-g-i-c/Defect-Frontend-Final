@@ -57,13 +57,14 @@ export default class AddDefects extends Component {
               <div>
                 <Form>
                   <Row>
-                    <Col span={12}> Defect Name </Col>
+                    <Col span={12}> Defect Id </Col>
                     <Col span={12}> Module</Col>
                   </Row>
                   <Row style={{ margin: "0px 0px 30px 0px" }}>
                     <Col span={12}>
                       <Input
-                        placeholder="Defect Name"
+                        readOnly={true}
+                        placeholder="Defect Id"
                         style={{ width: "90%" }}
                         allowClear
                         onChange={this.onChange}

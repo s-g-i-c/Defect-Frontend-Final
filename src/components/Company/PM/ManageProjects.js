@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 import {
   Table,
@@ -20,7 +20,7 @@ import {
   Select
 } from "antd";
 
-class CompanyMain extends React.Component {
+export default class ManageProjects extends Component {
   state = {
     loading: false,
     visible: false,
@@ -48,13 +48,13 @@ class CompanyMain extends React.Component {
   handleOk = e => {
     console.log(e);
     this.setState({
-      visible: false
+      visiblemodel: false
     });
   };
   handleCancel = e => {
     console.log(e);
     this.setState({
-      visible: false
+      visiblemodel: false
     });
   };
 
@@ -85,7 +85,6 @@ class CompanyMain extends React.Component {
       }
     });
   };
-
   render() {
     const Dragger = Upload.Dragger;
     const { visiblemodel } = this.state; // for Model
@@ -455,5 +454,3 @@ class CompanyMain extends React.Component {
     );
   }
 }
-
-export default CompanyMain;
