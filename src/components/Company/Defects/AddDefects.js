@@ -1,5 +1,15 @@
 import React, { Component } from "react";
-import { Button, Layout, Modal, Row, Col, Input, Select, Form } from "antd";
+import {
+  Button,
+  Layout,
+  Drawer,
+  Row,
+  Col,
+  Input,
+  Select,
+  Form,
+  Icon
+} from "antd";
 
 const { Content } = Layout;
 
@@ -44,12 +54,11 @@ export default class AddDefects extends Component {
           />
           <Content style={{ height: "10px", backgroundColor: "white" }}>
             <Button type="primary" icon="file-add" onClick={this.showModal}>
-              ADD
+              <Icon type="plus" /> ADD
             </Button>
-            <Modal
+            <Drawer
               title="Add Defect"
               width="60%"
-              style={{ top: 10 }}
               visible={this.state.visible}
               onOk={this.handleOk}
               onCancel={this.handleCancel}
@@ -185,7 +194,7 @@ export default class AddDefects extends Component {
                   </Row>
                 </Form>
               </div>
-            </Modal>
+            </Drawer>
           </Content>
           <Content
             id="emptyDiv"

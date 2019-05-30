@@ -44,11 +44,174 @@ export default class Privillages extends Component {
         </div>
         <Row style={{ margin: "0px 0px 20px 0px" }}>
           <Col span={4}> </Col>
-          <Col span={4}> Company </Col>
+          <Col span={4}>Lead QA</Col>
+          <Col span={4}>Lead Sof. Eng </Col>
+          <Col span={4}>QA</Col>
+          <Col span={4}>Sof. Eng</Col>
+          <Col span={4}>Project Manager</Col>
         </Row>
 
         <Row style={{ margin: "0px 0px 20px 0px" }}>
           <Col span={4}> Add Defects </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+        </Row>
+
+        <Row style={{ margin: "0px 0px 20px 0px" }}>
+          <Col span={4}> Add Module </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+        </Row>
+
+        <Row style={{ margin: "0px 0px 20px 0px" }}>
+          <Col span={4}> Add Module </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+        </Row>
+        <Row style={{ margin: "0px 0px 20px 0px" }}>
+          <Col span={4}> Add Module </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+        </Row>
+        <Row style={{ margin: "0px 0px 20px 0px" }}>
+          <Col span={4}> Add Module </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+        </Row>
+
+        <Row style={{ margin: "0px 0px 20px 0px" }}>
+          <Col span={4}> Add Module </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+        </Row>
+        <Row style={{ margin: "0px 0px 20px 0px" }}>
+          <Col span={4}> Add Module </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+        </Row>
+        <Row style={{ margin: "0px 0px 20px 0px" }}>
+          <Col span={4}> Add Module </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+        </Row>
+        <Row style={{ margin: "0px 0px 20px 0px" }}>
+          <Col span={4}> Add Module </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
           <Col span={4}>
             <ToggleSwitch onChange={onChange} />
           </Col>
