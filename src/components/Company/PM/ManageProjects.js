@@ -93,9 +93,11 @@ export default class ManageProjects extends Component {
       {
         key: "id",
         id: "P678",
-        name: "IOT",
-        Designation: "Software Engineer",
-        Email: "Mathan@gmail.com"
+        name: "Hospital Management System",
+        duration: "6 months",
+        startDate: "02/04/2019",
+        endDate: "02/10/2019",
+        projectType: "IOT"
       }
     ];
     const columns = [
@@ -110,14 +112,24 @@ export default class ManageProjects extends Component {
         key: "name"
       },
       {
-        title: "Designation",
-        dataIndex: "Designation",
-        key: "Designation"
+        title: "Duration",
+        dataIndex: "duration",
+        key: "duration"
       },
       {
-        title: "Email",
-        dataIndex: "Email",
-        key: "Email"
+        title: "Start Date",
+        dataIndex: "startDate",
+        key: "startDate"
+      },
+      {
+        title: "End Date",
+        dataIndex: "endDate",
+        key: "endDate"
+      },
+      {
+        title: "Prject Type",
+        dataIndex: "projectType",
+        key: "startDate"
       },
       {
         title: "Action",

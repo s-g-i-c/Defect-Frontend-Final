@@ -310,7 +310,6 @@ export default class ManageDefects extends Component {
         <Drawer
           title="CREATE NEW DEFECT"
           visible={this.state.visible}
-          title="DefectName"
           width="60%"
           onClose={this.onClose}
           onCancel={this.onClose}
