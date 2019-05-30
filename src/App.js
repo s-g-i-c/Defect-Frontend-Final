@@ -10,7 +10,7 @@ import Main from "./components/MainPanel/Main";
 // import Login from "./components/User/Login";
 // import Routes from "./components/User/Routes";
 
-// import ManDef from "./components/Company/PM/Allocation";
+// import ManDef from "./components/Company/CompanyConfiguration/Config";
 
 // import QAPrivilage from "./components/Company/QA/Privillages";
 // import PAPrivilage from "./components/ProductAdmin/Privillages";

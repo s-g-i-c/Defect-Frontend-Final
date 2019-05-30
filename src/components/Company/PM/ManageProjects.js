@@ -86,7 +86,6 @@ export default class ManageProjects extends Component {
   };
   render() {
     const Dragger = Upload.Dragger;
-    const { visible } = this.state; // for Model
 
     const props = {
       name: "file",
@@ -109,7 +108,7 @@ export default class ManageProjects extends Component {
         key: "id",
         id: "P678",
         name: "IOT",
-        abb: "Software Engineer",
+        Designation: "Software Engineer",
         Email: "Mathan@gmail.com"
       }
     ];
@@ -183,7 +182,7 @@ export default class ManageProjects extends Component {
         <div style={{ padding: 4, background: "#f5f5f5;", minHeight: 320 }}>
           <Button type="primary" onClick={this.showDrawer}>
             <Icon type="plus" />
-            Add Project
+            Allocations
           </Button>
           <br />
           <br />

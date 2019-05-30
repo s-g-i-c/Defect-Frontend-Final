@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+#configDiv {
+  padding-left: 7px;
+  /* border: 1px solid rgb(217, 217, 217); */
+  text-align: left;
+  margin-top: -14px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background: white;
+  font-family: "Comic Sans MS";
+  color: #40a9ff;
+  /* font-weight: bold; */
+}
+#font {
+  font-family: "Comic Sans MS";
+  font-size: 80%;
+}

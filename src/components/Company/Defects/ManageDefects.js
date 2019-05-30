@@ -1,30 +1,78 @@
 import React, { Component } from "react";
-import { Table, Button, Modal, Row, Col, Select } from "antd";
+import {
+  Table,
+  Button,
+  Modal,
+  Row,
+  Icon,
+  Divider,
+  Tooltip,
+  Popconfirm,
+  Drawer,
+  Select,
+  Col,
+  Input
+} from "antd";
 import AddDefects from "./AddDefects";
+import AddDefectForm from "./AddDefectForm";
+import EditDefect from "./EditDefect";
 
 export default class ManageDefects extends Component {
   state = {
     filteredInfo: null,
     sortedInfo: null,
-    visible: false
+    visible: false,
+    visibleModel: false,
+    ModelMore: false
+  };
+
+  showDrawer = () => {
+    this.setState({
+      visible: true
+    });
+  };
+
+  onClose = () => {
+    this.setState({
+      visible: false
+    });
   };
 
   showModal = () => {
     this.setState({
-      visible: true
+      visibleModel: true
     });
   };
 
   handleOk = e => {
     console.log(e);
     this.setState({
-      visible: false
+      visibleModel: false
     });
   };
   handleCancel = e => {
     console.log(e);
     this.setState({
-      visible: false
+      visibleModel: false
+    });
+  };
+
+  showModalMore = () => {
+    this.setState({
+      ModelMore: true
+    });
+  };
+
+  handleOkMore = e => {
+    console.log(e);
+    this.setState({
+      ModelMore: false
+    });
+  };
+  handleCancelMore = e => {
+    console.log(e);
+    this.setState({
+      ModelMore: false
     });
   };
 
@@ -57,11 +105,11 @@ export default class ManageDefects extends Component {
   };
 
   render() {
-    const { visible } = this.state; // for Model
-    const Option = Select.Option; // for Select
     let { sortedInfo, filteredInfo } = this.state;
     sortedInfo = sortedInfo || {};
     filteredInfo = filteredInfo || {};
+    const Option = Select.Option;
+    const { TextArea } = Input;
     const data = [
       {
         key: "1",
@@ -149,7 +197,49 @@ export default class ManageDefects extends Component {
         dataIndex: "",
         key: "x",
         render: () => (
-          <Button type="link" icon="ellipsis" onClick={this.showModal} />
+          // <Button type="link" icon="ellipsis" onClick={this.showModal} />
+          <span>
+            <Tooltip title="Edit">
+              <Icon
+                type="edit"
+                onClick={this.showDrawer}
+                className="datatable-icon"
+                style={{ color: "primary" }}
+              />
+            </Tooltip>
+            <Divider type="vertical" />
+            <Tooltip title="ChangeStatus">
+              <Icon
+                type="plus"
+                onClick={this.showModalMore}
+                className="datatable-icon"
+                style={{ color: "primary" }}
+              />
+            </Tooltip>
+            <Divider type="vertical" />
+            <Popconfirm
+              title="Are you sure, do you want delete this Company?"
+              icon={<Icon type="question-circle-o" style={{ color: "red" }} />}
+              onCancel={this.cancel}
+              okText="Yes"
+              cancelText="No"
+            >
+              <a href="hello" style={{ color: "red" }}>
+                <Tooltip title="Delete">
+                  <Icon type="delete" className="datatable-icon" />
+                </Tooltip>
+              </a>
+            </Popconfirm>
+            <Divider type="vertical" />
+            &nbsp; &nbsp;
+            <Tooltip title="Full View">
+              <Icon
+                type="fullscreen"
+                className="datatable-icon"
+                onClick={this.showModal}
+              />
+            </Tooltip>
+          </span>
         )
       }
     ];
@@ -158,7 +248,7 @@ export default class ManageDefects extends Component {
       <div>
         <Modal
           style={{ top: 10 }}
-          visible={visible}
+          visible={this.state.visibleModel}
           title="DefectName"
           width="60%"
           onOk={this.handleOk}
@@ -169,119 +259,65 @@ export default class ManageDefects extends Component {
             </Button>
           ]}
         >
-          <div>
-            <Row
-              style={{
-                margin: "0px 0px 20px 0px"
-              }}
-            >
-              <Col span={24}>
-                <Col span={6}> Module Name: </Col>
-                <Col span={18}> ModuleName </Col>
-              </Col>
-              {/* <Col span={12}>col-12</Col> */}
-            </Row>
-            <Row
-              style={{
-                margin: "0px 0px 20px 0px"
-              }}
-            >
-              <Col span={24} style={{ border: "0px solid" }}>
-                <Col span={6} style={{ border: "0px solid" }}>
-                  {" "}
-                  Description:{" "}
-                </Col>
-                <Col span={18}>
-                  {" "}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-                </Col>
-              </Col>
-              {/* <Col span={12}>col-12</Col> */}
-            </Row>
-            <Row
-              style={{
-                margin: "0px 0px 20px 0px"
-              }}
-            >
-              <Col span={24}>
-                <Col span={6}> Detailed Description: </Col>
-                <Col span={18}>
-                  {" "}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur voluptatibus accusantium necessitatibus culpa
-                  exercitationem autem excepturi incidunt eveniet officiis eos,
-                  eius facere, nostrum voluptates, fuga earum aliquam esse
-                  blanditiis quae?{" "}
-                </Col>
-              </Col>
-            </Row>
-            <Row
-              style={{
-                margin: "0px 0px 20px 0px"
-              }}
-            >
-              <Col span={24}>
-                <Col span={6}> Comments: </Col>
-                <Col span={18}>
-                  {" "}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur voluptatibus accusantium necessitatibus culpa
-                  exercitationem autem excepturi incidunt eveniet officiis eos,
-                  eius facere, nostrum voluptates, fuga earum aliquam esse
-                  blanditiis quae?. Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Similique nisi in dignissimos. Saepe dolorem
-                  dolorum dolor consectetur perspiciatis quis molestiae,
-                  eligendi quisquam labore sunt in quas debitis, doloribus,
-                  aliquam nam!
-                </Col>
-              </Col>
-            </Row>
-            <Row
-              style={{
-                margin: "0px 0px 20px 0px"
-              }}
-            >
-              <Col span={24}>
-                <Col span={6}> Defect Added By: </Col>
-                <Col span={18}>Added By</Col>
-              </Col>
-            </Row>
-            <Row
-              style={{
-                margin: "0px 0px 20px 0px"
-              }}
-            >
-              <Col span={24}>
-                <Col span={6}> Added Date: </Col>
-                <Col span={18}>Added Date</Col>
-              </Col>
-            </Row>
-            <Row
-              style={{
-                margin: "0px 0px 20px 0px"
-              }}
-            >
-              <Col span={24}>
-                <Col span={6}> Status: </Col>
-                <Col span={18}>
-                  <Select
-                    showSearch
-                    style={{ width: "30%" }}
-                    placeholder=" Select Status"
-                  >
-                    <Option value="open"> Open </Option>
-                    <Option value="reopern"> Re-Open </Option>
-                    <Option value="deferd"> Deferred </Option>
-                    <Option value="closed"> Closed </Option>
-                  </Select>
-                </Col>
-              </Col>
-            </Row>
-          </div>
+          <AddDefectForm />
         </Modal>
+
+        <Modal
+          style={{ top: 10 }}
+          visible={this.state.ModelMore}
+          title="DefectName"
+          width="60%"
+          onOk={this.handleOkMore}
+          onCancel={this.handleCancelMore}
+          footer={[
+            <Button key="back" onClick={this.handleCancelMore}>
+              Return
+            </Button>
+          ]}
+        >
+          <Row>
+            <Col span={24}>
+              <Col span={6}> Status: </Col>
+              <Col span={18}>
+                <Select
+                  showSearch
+                  style={{ width: "30%" }}
+                  placeholder=" Select Status"
+                >
+                  <Option value="open"> Open </Option>
+                  <Option value="reopern"> Re-Open </Option>
+                  <Option value="deferd"> Deferred </Option>
+                  <Option value="closed"> Closed </Option>
+                </Select>
+              </Col>
+            </Col>
+          </Row>
+          <Row> &nbsp; </Row>
+          <Row>
+            <Col span={24}>
+              <Col span={6}> Comments: </Col>
+              <Col span={18}>
+                <Col span={20}>
+                  <TextArea rows={4} />{" "}
+                </Col>
+              </Col>
+            </Col>
+          </Row>
+        </Modal>
+
+        <Drawer
+          title="CREATE NEW COMPANY"
+          width={"60%"}
+          onClose={this.onClose}
+          visible={this.state.visible}
+        >
+          <EditDefect />
+        </Drawer>
+
         <Row>
           <AddDefects />
         </Row>
+
         <Table
           columns={columns}
           dataSource={data}

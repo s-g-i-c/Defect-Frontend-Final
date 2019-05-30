@@ -90,7 +90,97 @@ export default class Privillages extends Component {
         </Row>
 
         <Row style={{ margin: "0px 0px 20px 0px" }}>
-          <Col span={4}> Add Module </Col>
+          <Col span={4}> Dashboard Configuration </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+        </Row>
+        <Row style={{ margin: "0px 0px 20px 0px" }}>
+          <Col span={4}> Project Configuration </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+        </Row>
+        <Row style={{ margin: "0px 0px 20px 0px" }}>
+          <Col span={4}> Add Employee </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+        </Row>
+        <Row style={{ margin: "0px 0px 20px 0px" }}>
+          <Col span={4}> Add Employee </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+        </Row>
+        <Row style={{ margin: "0px 0px 20px 0px" }}>
+          <Col span={4}> Add Employee </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+          <Col span={4}>
+            <ToggleSwitch onChange={onChange} />
+          </Col>
+        </Row>
+        <Row style={{ margin: "0px 0px 20px 0px" }}>
+          <Col span={4}> Add Employee </Col>
           <Col span={4}>
             <ToggleSwitch onChange={onChange} />
           </Col>
