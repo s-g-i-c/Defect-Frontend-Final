@@ -7,6 +7,7 @@ import {
   Icon,
   Button,
   Drawer,
+  Select,
   Form,
   Input,
   DatePicker,
@@ -14,16 +15,14 @@ import {
   Row,
   Tooltip,
   Upload,
-  message,
-  Avatar,
-  Timeline
+  message
 } from "antd";
 
+const { Option } = Select;
 class CompanyMain extends React.Component {
   state = {
     loading: false,
-    visible: false,
-    placement: "bottom"
+    visible: false
   };
 
   showDrawer = () => {
@@ -61,23 +60,52 @@ class CompanyMain extends React.Component {
       {
         key: "id",
         id: "C678",
-        name: "Mathan",
-        Designation: "Software Engineer",
-        Email: "Mathan@gmail.com"
+        name: "Samuel Gnanam",
+        abbreviation: "Sgic",
+        period: "1Year",
+        admin: "Mathan"
+      },
+      {
+        key: "id",
+        id: "C452",
+        name: "Invicta Inovations",
+        abbreviation: "Invicta",
+        period: "1Year",
+        admin: "Theepan"
+      },
+
+      {
+        key: "id",
+        id: "C124",
+        name: "Sysco Labs",
+        abbreviation: "Sysco",
+        period: "1Year",
+        admin: "Hari"
+      },
+
+      {
+        key: "id",
+        id: "C777",
+        name: "Mithra inovations",
+        abbreviation: "mithra",
+        period: "2Year",
+        admin: "Tyron"
       },
       {
         key: "id",
         id: "C678",
-        name: "Dilux",
-        Designation: "Software Engineer",
-        Email: "Dilux@gmail.com"
+        name: "Samuel Gnanam",
+        abbreviation: "Sgic",
+        period: "1Year",
+        admin: "Mathan"
       },
       {
         key: "id",
-        id: "C678",
-        name: "Tyrone",
-        Designation: "Software Engineer",
-        Email: "Tyrone@gmail.com"
+        id: "C452",
+        name: "Invicta Inovations",
+        abbreviation: "Invicta",
+        period: "1Year",
+        admin: "Theepan"
       }
     ];
     const columns = [
@@ -87,19 +115,25 @@ class CompanyMain extends React.Component {
         key: "id"
       },
       {
-        title: "Employee Name",
+        title: "Company Name",
         dataIndex: "name",
         key: "name"
       },
       {
-        title: "Designation",
-        dataIndex: "Designation",
-        key: "Designation"
+        title: "Abbreviation",
+        dataIndex: "abbreviation",
+        key: "abbreviation"
       },
       {
-        title: "Email",
-        dataIndex: "Email",
-        key: "Email"
+        title: "Lisence period",
+        dataIndex: "period",
+        key: "period"
+      },
+
+      {
+        title: "Company Admin",
+        dataIndex: "admin",
+        key: "admin"
       },
       {
         title: "Action",
@@ -107,18 +141,29 @@ class CompanyMain extends React.Component {
 
         render: () => (
           <span>
-            <Tooltip title="Edit">
-              <Icon
-                type="edit"
-                className="datatable-icon"
-                style={{ color: "blue" }}
-                onClick={this.showDrawer}
-              />
-            </Tooltip>
+            <Popconfirm
+              title="Are you sure, do you want edit this Company?"
+              icon={
+                <Icon type="question-circle-o" style={{ color: "primary" }} />
+              }
+              onCancel={this.cancel}
+              okText="Yes"
+              cancelText="No"
+            >
+              <a href="hello">
+                <Tooltip title="Edit">
+                  <Icon
+                    type="edit"
+                    className="datatable-icon"
+                    style={{ color: "primary" }}
+                  />
+                </Tooltip>
+              </a>
+            </Popconfirm>
             <Divider type="vertical" />
             &nbsp; &nbsp;
             <Popconfirm
-              title="Are you sure, do you want delete this Employee?"
+              title="Are you sure, do you want delete this Company?"
               icon={<Icon type="question-circle-o" style={{ color: "red" }} />}
               onCancel={this.cancel}
               okText="Yes"
@@ -148,27 +193,26 @@ class CompanyMain extends React.Component {
         <div style={{ padding: 4, background: "#f5f5f5;", minHeight: 360 }}>
           <Button type="primary" onClick={this.showDrawer}>
             <Icon type="plus" />
-            Add Employees
+            Add Company
           </Button>
           <br />
           <br />
           <Table columns={columns} dataSource={dataSource} />
         </div>
-        <div style={{ background: "#f5f5f5" }}>
+        <div>
           <Drawer
-            title="CREATE NEW EMPLOYEE"
+            title="CREATE NEW COMPANY"
             width={"60%"}
-            position={"bottom"}
             onClose={this.onClose}
             visible={this.state.visible}
           >
             <Form layout="vertical" hideRequiredMark>
               <Row gutter={16}>
                 <Col span={12}>
-                  <Form.Item label="Employee ID">
+                  <Form.Item label="Company ID">
                     <Input
-                      value="#EMP101"
-                      id="employeeId"
+                      value="#COM101"
+                      id="companyId"
                       disabled
                       style={{
                         border: "1px solid #719ECE"
@@ -177,18 +221,18 @@ class CompanyMain extends React.Component {
                   </Form.Item>
                 </Col>
                 <Col span={12}>
-                  <Form.Item label="Employee Name">
+                  <Form.Item label="Company Name">
                     <Input
-                      placeholder="Please Enter Employee Name"
-                      id="employeeName"
+                      placeholder="Please Enter Company Name"
+                      id="companyName"
                       style={{ border: "1px solid #719ECE" }}
                     />
                   </Form.Item>
                 </Col>
                 <Col span={12}>
-                  <Form.Item label="Designation">
+                  <Form.Item label="Abberivation">
                     <Input
-                      placeholder="Designation"
+                      placeholder="Abberivation"
                       style={{ border: "1px solid #719ECE" }}
                     />
                   </Form.Item>
@@ -203,19 +247,61 @@ class CompanyMain extends React.Component {
                 </Col>
 
                 <Col span={12}>
-                  <Form.Item label="Contract Period">
+                  <Form.Item label="Liscence Period">
                     <Input
                       value="3 Years"
-                      id="Contract Period"
+                      id="lisencePeriod"
                       style={{
                         border: "1px solid #719ECE"
                       }}
+                      disabled
                     />
                   </Form.Item>
                 </Col>
                 <Col span={12}>
-                  <Form.Item label="Joining Date">
-                    <DatePicker
+                  <Form.Item label="Company URL">
+                    <Input
+                      addonBefore="http://"
+                      addonAfter=".com"
+                      placeholder="URL"
+                      style={{
+                        border: "1px solid #719ECE",
+                        borderRadius: "3px"
+                      }}
+                    />
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row gutter={16}>
+                <Col span={12}>
+                  <Form.Item label="Company Admin">
+                    <Input
+                      placeholder="Please Enter Company Admin"
+                      id="companyAdmin"
+                      style={{ border: "1px solid #719ECE" }}
+                    />
+                  </Form.Item>
+                </Col>
+                <Col span={12}>
+                  <Form.Item label="Lisence Package">
+                    <Select
+                      placeholder="Please choose the Package"
+                      style={{
+                        border: "1px solid #719ECE",
+                        borderRadius: "4px"
+                      }}
+                    >
+                      <Option value="bronze">Bronze</Option>
+                      <Option value="silver">Silver</Option>
+                      <Option value="gold">Gold</Option>
+                    </Select>
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row gutter={16}>
+                <Col span={12}>
+                  <Form.Item label="Liscence Period">
+                    <DatePicker.RangePicker
                       getPopupContainer={trigger => trigger.parentNode}
                       style={{
                         border: "1px solid #719ECE",
@@ -225,43 +311,13 @@ class CompanyMain extends React.Component {
                     />
                   </Form.Item>
                 </Col>
-
-                <Col span={10} type="dashed">
-                  <Avatar
-                    style={{
-                      margin: "16px 0 0  55px",
-                      background: "linear-gradient(to right, #7474bf, #348ac7)"
-                    }}
-                    size={144}
-                    icon="user"
-                  />
-                </Col>
-                <Col span={2}>
-                  <Timeline>
-                    <Timeline.Item />
-                    <br />
-
-                    <br />
-                    <br />
-                    <p>OR</p>
-                    <br />
-
-                    <br />
-                    <br />
-                    <Timeline.Item />
-                  </Timeline>
-                </Col>
                 <Col span={12}>
-                  <Dragger {...props}>
+                  <Dragger {...props} style={{ height: "30%" }}>
                     <p className="ant-upload-drag-icon">
-                      <Icon type="inbox" />
+                      <Icon type="inbox" size="10px" />
                     </p>
                     <p className="ant-upload-text">
-                      Click or drag file to this area to upload
-                    </p>
-                    <p className="ant-upload-hint">
-                      Support for a single or bulk upload. Strictly prohibit
-                      from uploading company data or other band files
+                      Click or drag Agreement Files
                     </p>
                   </Dragger>
                 </Col>

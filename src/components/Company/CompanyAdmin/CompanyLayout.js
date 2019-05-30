@@ -25,7 +25,7 @@ class SiderNav extends React.Component {
 
   render() {
     return (
-      <Router path="/Manage">
+      <Router>
         <Layout>
           <Sider
             collapsible
@@ -34,33 +34,20 @@ class SiderNav extends React.Component {
           >
             <div className="logo">
               <img src={logo} padding="10" width="65px" alt="logo" />
+              <a href="/">Defect.T</a>
             </div>
             <Menu theme="dark " mode="inline" defaultSelectedKeys={["1"]}>
               <Menu.Item key="1">
                 <Icon type="windows" />
-                <Link to={`/Dashboard`} />
+
                 <span>Dashboard</span>
+                <Link to={`/CompanyAdminLayout/Dashboard`} />
               </Menu.Item>
               <Menu.Item key="2">
                 <Icon type="folder-add" />
+
+                <span>Manage Employees</span>
                 <Link to={`/Manage`} />
-                <span>Manage Companies</span>
-              </Menu.Item>
-              <Menu.Item key="3">
-                <Icon type="robot" />
-                <span>Defects</span>
-              </Menu.Item>
-              <Menu.Item key="4">
-                <Icon type="dingding" />
-                <span>Manage</span>
-              </Menu.Item>
-              <Menu.Item key="5">
-                <Icon type="user" />
-                <span>Users</span>
-              </Menu.Item>
-              <Menu.Item key="6">
-                <Icon type="plus" />
-                <span>Manage</span>
               </Menu.Item>
             </Menu>
           </Sider>
@@ -115,9 +102,11 @@ class SiderNav extends React.Component {
                           <Icon type="setting" />
                           Edit Profile
                         </Menu.Item>
+
                         <Menu.Item key="setting:3">
                           <Icon type="logout" />
                           Logout
+                          <Link to={`/main`} />
                         </Menu.Item>
                       </MenuItemGroup>
                     </SubMenu>
@@ -138,7 +127,10 @@ class SiderNav extends React.Component {
                 minHeight: 700
               }}
             >
-              <Route path="/Dashboard" component={Dashboard} />
+              <Route
+                path="/CompanyAdminLayout/Dashboard"
+                component={Dashboard}
+              />
               <Route path="/Manage" component={CompanyMain} />
               <Route path="/profile" component={Profile} />
             </Content>

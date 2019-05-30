@@ -2,32 +2,19 @@ import React, { Component } from "react";
 
 import "antd/dist/antd.css";
 
-import {
-  Form,
-  Row,
-  Avatar,
-  Checkbox,
-  Card,
-  Col,
-  Input,
-  Button,
-  Icon
-} from "antd";
+import { Form, Avatar, Checkbox, Card, Input, Button, Icon } from "antd";
 
 export default class AdvancedSearchForm extends Component {
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        console.log("Received values of form: ", values);
-      }
-    });
-  };
   render() {
     return (
-      <div align="center" style={{ background: "#FFF", padding: "30px" }}>
+      <div
+        align="center"
+        style={{
+          background: "linear-gradient(to right, #7474bf, #348ac7)",
+          padding: "133px"
+        }}
+      >
         <Card
-          title="LOGIN"
           bordered={true}
           style={{
             borderRadius: "50px 0 50px 0",
@@ -37,7 +24,14 @@ export default class AdvancedSearchForm extends Component {
             width: 400
           }}
         >
-          <Avatar size={120} icon="user" />
+          <h2 style={{ color: "#348AC7" }}>DEFECT TRACKER</h2>
+          <Avatar
+            size={120}
+            icon="user"
+            style={{
+              background: "linear-gradient(to right, #7474bf, #348ac7)"
+            }}
+          />
           <br />
           &nbsp;
           <Form onSubmit={this.handleSubmit} className="login-form">
@@ -63,17 +57,31 @@ export default class AdvancedSearchForm extends Component {
             <Form.Item>
               <Checkbox>Remember me</Checkbox>
               <br />
-              <a className="login-form-forgot" href="">
-                Forgot password
-              </a>
-              <br />
+
               <Button
                 type="primary"
                 htmlType="submit"
                 className="login-form-button"
+                style={{
+                  size: "100%",
+                  width: "150px",
+                  borderRadius: "10px 0 10px 0"
+                }}
               >
-                Log in
+                <a
+                  className="login-form-forgot"
+                  href="/main"
+                  style={{ color: "#FFF" }}
+                >
+                  Login
+                </a>
               </Button>
+              <br />
+
+              <br />
+              <a className="login-form-forgot" href="/main">
+                Forgot password
+              </a>
             </Form.Item>
           </Form>
           {/* <p>Card content</p>

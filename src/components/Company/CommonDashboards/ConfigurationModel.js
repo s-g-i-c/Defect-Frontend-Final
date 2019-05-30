@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Checkbox, Row } from "antd";
+import { Checkbox, Row, Card, Button, Col } from "antd";
 
 export default class ConfigurationModel extends Component {
   onChange(e) {
@@ -9,22 +9,61 @@ export default class ConfigurationModel extends Component {
     return (
       <div>
         <Row>
-          <Checkbox onChange={this.onChange}> Total Defects </Checkbox>
+          <Card style={{ width: 215, background: "#7474bf" }}>
+            <Checkbox onChange={this.onChange} style={{ color: "white" }}>
+              {" "}
+              Total Defects{" "}
+            </Checkbox>
+          </Card>
         </Row>
         <Row>
-          <Checkbox onChange={this.onChange}> Fixed Defects </Checkbox>
+          <Card style={{ width: 215, background: "#7474bf" }}>
+            <Checkbox onChange={this.onChange} style={{ color: "white" }}>
+              Fixed Defects
+            </Checkbox>
+          </Card>
         </Row>
         <Row>
-          <Checkbox onChange={this.onChange}> Available Defects </Checkbox>
+          <Card style={{ width: 215, background: "#7474bf" }}>
+            <Checkbox onChange={this.onChange} style={{ color: "white" }}>
+              Available Defects
+            </Checkbox>
+          </Card>
         </Row>
         <Row>
-          <Checkbox onChange={this.onChange}> Overall Total Defects </Checkbox>
+          <Card style={{ width: 215, background: "#7474bf" }}>
+            <Checkbox onChange={this.onChange} style={{ color: "white" }}>
+              Overall Total Defects
+            </Checkbox>
+          </Card>
         </Row>
         <Row>
-          <Checkbox onChange={this.onChange}> Overall Total Defects </Checkbox>
+          <Card style={{ width: 215, background: "#7474bf" }}>
+            <Checkbox onChange={this.onChange} style={{ color: "white" }}>
+              Overall Total Defects
+            </Checkbox>
+          </Card>
         </Row>
         <Row>
-          <Checkbox onChange={this.onChange}> Overall Total Defects </Checkbox>
+          <Card style={{ width: 215, background: "#7474bf" }}>
+            <Checkbox onChange={this.onChange} style={{ color: "white" }}>
+              Overall Total Defects
+            </Checkbox>
+          </Card>
+        </Row>
+        <Row>
+          <Card style={{ width: 215, background: "#7474bf" }}>
+            <Checkbox onChange={this.onChange} style={{ color: "white" }}>
+              Overall Total Defects
+            </Checkbox>
+          </Card>
+        </Row>
+        <Row>
+          <Col style={{ textAlign: "right" }}>
+            <Card bordered={false} style={{ width: 215 }}>
+              <Button type="primary"> Apply </Button>
+            </Card>
+          </Col>
         </Row>
       </div>
     );

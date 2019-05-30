@@ -4,6 +4,7 @@ import React, { Component } from "react";
 
 class Profile extends Component {
   render() {
+    const { TextArea } = Input;
     return (
       <div>
         <Row>
@@ -45,17 +46,48 @@ class Profile extends Component {
                   />
                 </Form.Item>
               </Row>
+              <Row>Bio</Row>
+              <Row>
+                <Form.Item>
+                  <TextArea rows="1.5" placeholder="Enter Bio !!!" />
+                </Form.Item>
+              </Row>
 
               <Row>
-                <Button type="primary">Save Changes</Button>&nbsp;
-                <Button>Cancel</Button>
+                <Button
+                  icon="check"
+                  type="primary"
+                  style={{
+                    size: "50%",
+                    borderRadius: "15px 0 15px 0"
+                  }}
+                >
+                  Update Changes
+                </Button>
+                &nbsp;
+                <Button
+                  type="danger"
+                  icon="close"
+                  onClick={this.onClose}
+                  style={{
+                    size: "50%",
+                    borderRadius: "15px 0 15px 0",
+                    background: "#cc104b",
+                    color: "#FFF"
+                  }}
+                >
+                  Cancel Changes
+                </Button>
               </Row>
             </Col>
           </Col>
           <Col span={7}>
             <Divider>Update </Divider>
             <Avatar
-              style={{ margin: "16px 0 0  85px" }}
+              style={{
+                margin: "16px 0 0  85px",
+                background: "linear-gradient(to right, #7474bf, #348ac7)"
+              }}
               size={164}
               icon="user"
             />
