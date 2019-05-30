@@ -56,7 +56,7 @@ class Main extends Component {
                       </Avatar>
 
                       <Link push to={`/ProductAdminLayout/Dashboard`}>
-                        <h3>ProductAdmin</h3>
+                        <h3>PRODUCT ADMIN</h3>
                       </Link>
                     </Col>
                     &nbsp;
@@ -88,26 +88,10 @@ class Main extends Component {
                         icon="user"
                       />
                       <Link push to={`/CompanyAdminLayout/Dashboard`}>
-                        <h3>CompanyAdmin</h3>
+                        <h3>COMPANY ADMIN</h3>
                       </Link>
                     </Col>
-                    &nbsp;
-                    <Col span={4}>
-                      <Avatar
-                        shape="square"
-                        size={164}
-                        style={{
-                          background:
-                            "linear-gradient(to right, #DC2424, #4A569D)",
-                          borderRadius: "50px 0 50px 0"
-                        }}
-                        icon="user"
-                      />
-                      <Link push to={`/ProductAdminLayout/Dashboard`}>
-                        <h3>ProductAdmin</h3>
-                      </Link>
-                    </Col>
-                    &nbsp;
+                    &nbsp; &nbsp;
                     <Col span={4}>
                       <Avatar
                         shape="square"
@@ -121,11 +105,11 @@ class Main extends Component {
                       />
                       <Link push to={`/PMLayout/Dashboard`}>
                         <br />
-                        <h3>Project Manger</h3>
+                        <h3>PROJECT MANAGER</h3>
                       </Link>
                     </Col>
                     &nbsp;
-                    <Col span={2}>
+                    <Col span={4}>
                       <Avatar
                         shape="square"
                         size={164}
@@ -140,7 +124,22 @@ class Main extends Component {
                       </Avatar>
 
                       <Link push to={`/Developer/Dashboard`}>
-                        <h3>Developers</h3>
+                        <h3 align="center">DEVELOPERS</h3>
+                      </Link>
+                    </Col>{" "}
+                    <Col span={2}>
+                      <Avatar
+                        shape="square"
+                        size={164}
+                        style={{
+                          background:
+                            "linear-gradient(to right, #DC2424, #4A569D)",
+                          borderRadius: "50px 0 50px 0"
+                        }}
+                        icon="exclamation"
+                      />
+                      <Link push to={`/ProductAdminLayout/Dashboard`}>
+                        <h3>HELP DESK</h3>
                       </Link>
                     </Col>
                   </Row>

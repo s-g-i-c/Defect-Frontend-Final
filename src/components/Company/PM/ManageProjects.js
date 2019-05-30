@@ -16,27 +16,25 @@ import {
   Avatar,
   Timeline,
   Upload,
-  message,
-  Select
+  message
 } from "antd";
 
 export default class ManageProjects extends Component {
   state = {
     loading: false,
     visible: false,
-    visiblemodel: false,
-    placement: "bottom"
+    visiblemodel: false
   };
 
   showDrawer = () => {
     this.setState({
-      visiblemodel: true
+      visible: true
     });
   };
 
   onClose = () => {
     this.setState({
-      visiblemodel: false
+      visible: false
     });
   };
   showModal = () => {
@@ -87,7 +85,7 @@ export default class ManageProjects extends Component {
   };
   render() {
     const Dragger = Upload.Dragger;
-    const { visiblemodel } = this.state; // for Model
+    const { visible } = this.state; // for Model
 
     const props = {
       name: "file",
@@ -344,11 +342,11 @@ export default class ManageProjects extends Component {
             </div>
           </Drawer>
           <Drawer
-            visible={visiblemodel}
-            title="Company Admin"
-            width="60%"
-            onOk={this.handleOk}
-            onCancel={this.handleCancel}
+            title="CREATE NEW EMPLOYEE"
+            width={"60%"}
+            position={"bottom"}
+            onClose={this.handleCancel}
+            visible={this.state.visiblemodel}
             footer={[
               <Button key="back" onClick={this.handleCancel}>
                 Return

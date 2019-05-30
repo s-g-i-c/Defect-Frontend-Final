@@ -7,6 +7,7 @@ import {
   Icon,
   Button,
   Drawer,
+  Select,
   Form,
   Input,
   DatePicker,
@@ -15,15 +16,15 @@ import {
   Tooltip,
   Upload,
   message,
-  Avatar,
-  Timeline
+  Timeline,
+  Avatar
 } from "antd";
 
+const { Option } = Select;
 class CompanyMain extends React.Component {
   state = {
     loading: false,
-    visible: false,
-    placement: "bottom"
+    visible: false
   };
 
   showDrawer = () => {
@@ -34,7 +35,26 @@ class CompanyMain extends React.Component {
 
   onClose = () => {
     this.setState({
-      visible: false
+      visible: false,
+      visiblemodel: false
+    });
+  };
+  showModal = () => {
+    this.setState({
+      visiblemodel: true
+    });
+  };
+
+  handleOk = e => {
+    console.log(e);
+    this.setState({
+      visiblemodel: false
+    });
+  };
+  handleCancel = e => {
+    console.log(e);
+    this.setState({
+      visiblemodel: false
     });
   };
 
@@ -61,23 +81,52 @@ class CompanyMain extends React.Component {
       {
         key: "id",
         id: "C678",
-        name: "Mathan",
-        Designation: "Software Engineer",
-        Email: "Mathan@gmail.com"
+        name: "Samuel Gnanam",
+        abbreviation: "Sgic",
+        period: "1Year",
+        admin: "Mathan"
+      },
+      {
+        key: "id",
+        id: "C452",
+        name: "Invicta Inovations",
+        abbreviation: "Invicta",
+        period: "1Year",
+        admin: "Theepan"
+      },
+
+      {
+        key: "id",
+        id: "C124",
+        name: "Sysco Labs",
+        abbreviation: "Sysco",
+        period: "1Year",
+        admin: "Hari"
+      },
+
+      {
+        key: "id",
+        id: "C777",
+        name: "Mithra inovations",
+        abbreviation: "mithra",
+        period: "2Year",
+        admin: "Tyron"
       },
       {
         key: "id",
         id: "C678",
-        name: "Dilux",
-        Designation: "Software Engineer",
-        Email: "Dilux@gmail.com"
+        name: "Samuel Gnanam",
+        abbreviation: "Sgic",
+        period: "1Year",
+        admin: "Mathan"
       },
       {
         key: "id",
-        id: "C678",
-        name: "Tyrone",
-        Designation: "Software Engineer",
-        Email: "Tyrone@gmail.com"
+        id: "C452",
+        name: "Invicta Inovations",
+        abbreviation: "Invicta",
+        period: "1Year",
+        admin: "Theepan"
       }
     ];
     const columns = [
@@ -87,19 +136,25 @@ class CompanyMain extends React.Component {
         key: "id"
       },
       {
-        title: "Employee Name",
+        title: "Company Name",
         dataIndex: "name",
         key: "name"
       },
       {
-        title: "Designation",
-        dataIndex: "Designation",
-        key: "Designation"
+        title: "Abbreviation",
+        dataIndex: "abbreviation",
+        key: "abbreviation"
       },
       {
-        title: "Email",
-        dataIndex: "Email",
-        key: "Email"
+        title: "Lisence period",
+        dataIndex: "period",
+        key: "period"
+      },
+
+      {
+        title: "Company Admin",
+        dataIndex: "admin",
+        key: "admin"
       },
       {
         title: "Action",
@@ -107,18 +162,28 @@ class CompanyMain extends React.Component {
 
         render: () => (
           <span>
-            <Tooltip title="Edit">
-              <Icon
-                type="edit"
-                className="datatable-icon"
-                style={{ color: "blue" }}
-                onClick={this.showDrawer}
-              />
-            </Tooltip>
+            <Popconfirm
+              title="Are you sure, do you want edit this Company?"
+              icon={
+                <Icon type="question-circle-o" style={{ color: "primary" }} />
+              }
+              onCancel={this.cancel}
+              okText="Yes"
+              cancelText="No"
+            >
+              <Tooltip title="Edit">
+                <Icon
+                  type="edit"
+                  onClick={this.showDrawer}
+                  className="datatable-icon"
+                  style={{ color: "primary" }}
+                />
+              </Tooltip>
+            </Popconfirm>
             <Divider type="vertical" />
             &nbsp; &nbsp;
             <Popconfirm
-              title="Are you sure, do you want delete this Employee?"
+              title="Are you sure, do you want delete this Company?"
               icon={<Icon type="question-circle-o" style={{ color: "red" }} />}
               onCancel={this.cancel}
               okText="Yes"
@@ -133,11 +198,13 @@ class CompanyMain extends React.Component {
             </Popconfirm>
             <Divider type="vertical" />
             &nbsp; &nbsp;
-            <a href="hello" style={{ color: "green" }}>
-              <Tooltip title="Full View">
-                <Icon type="fullscreen" className="datatable-icon" />
-              </Tooltip>
-            </a>
+            <Tooltip title="Full View">
+              <Icon
+                type="fullscreen"
+                className="datatable-icon"
+                onClick={this.showModal}
+              />
+            </Tooltip>
           </span>
         )
       }
@@ -148,13 +215,161 @@ class CompanyMain extends React.Component {
         <div style={{ padding: 4, background: "#f5f5f5;", minHeight: 360 }}>
           <Button type="primary" onClick={this.showDrawer}>
             <Icon type="plus" />
-            Add Employees
+            Add Company
           </Button>
           <br />
           <br />
           <Table columns={columns} dataSource={dataSource} />
         </div>
-        <div style={{ background: "#f5f5f5" }}>
+        <div>
+          <Drawer
+            title="CREATE NEW COMPANY"
+            width={"60%"}
+            onClose={this.onClose}
+            visible={this.state.visible}
+          >
+            <Form layout="vertical" hideRequiredMark>
+              <Row gutter={16}>
+                <Col span={12}>
+                  <Form.Item label="Company ID">
+                    <Input
+                      value="#COM101"
+                      id="companyId"
+                      disabled
+                      style={{
+                        border: "1px solid #719ECE"
+                      }}
+                    />
+                  </Form.Item>
+                </Col>
+                <Col span={12}>
+                  <Form.Item label="Company Name">
+                    <Input
+                      placeholder="Please Enter Company Name"
+                      id="companyName"
+                      style={{ border: "1px solid #719ECE" }}
+                    />
+                  </Form.Item>
+                </Col>
+                <Col span={12}>
+                  <Form.Item label="Abberivation">
+                    <Input
+                      placeholder="Abberivation"
+                      style={{ border: "1px solid #719ECE" }}
+                    />
+                  </Form.Item>
+                </Col>
+                <Col span={12}>
+                  <Form.Item label="Email_ID">
+                    <Input
+                      placeholder="Email ID"
+                      style={{ border: "1px solid #719ECE" }}
+                    />
+                  </Form.Item>
+                </Col>
+
+                <Col span={12}>
+                  <Form.Item label="Liscence Period">
+                    <Input
+                      value="3 Years"
+                      id="lisencePeriod"
+                      style={{
+                        border: "1px solid #719ECE"
+                      }}
+                      disabled
+                    />
+                  </Form.Item>
+                </Col>
+                <Col span={12}>
+                  <Form.Item label="Company URL">
+                    <Input
+                      addonBefore="http://"
+                      addonAfter=".com"
+                      placeholder="URL"
+                      style={{
+                        border: "1px solid #719ECE",
+                        borderRadius: "3px"
+                      }}
+                    />
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row gutter={16}>
+                <Col span={12}>
+                  <Form.Item label="Company Admin">
+                    <Input
+                      placeholder="Please Enter Company Admin"
+                      id="companyAdmin"
+                      style={{ border: "1px solid #719ECE" }}
+                    />
+                  </Form.Item>
+                </Col>
+                <Col span={12}>
+                  <Form.Item label="Lisence Package">
+                    <Select
+                      placeholder="Please choose the Package"
+                      style={{
+                        border: "1px solid #719ECE",
+                        borderRadius: "4px"
+                      }}
+                    >
+                      <Option value="bronze">Bronze</Option>
+                      <Option value="silver">Silver</Option>
+                      <Option value="gold">Gold</Option>
+                    </Select>
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row gutter={16}>
+                <Col span={12}>
+                  <Form.Item label="Liscence Period">
+                    <DatePicker.RangePicker
+                      getPopupContainer={trigger => trigger.parentNode}
+                      style={{
+                        border: "1px solid #719ECE",
+                        borderRadius: "4px",
+                        width: "100%"
+                      }}
+                    />
+                  </Form.Item>
+                </Col>
+                <Col span={12}>
+                  <Dragger {...props} style={{ height: "30%" }}>
+                    <p className="ant-upload-drag-icon">
+                      <Icon type="inbox" size="10px" />
+                    </p>
+                    <p className="ant-upload-text">
+                      Click or drag Agreement Files
+                    </p>
+                  </Dragger>
+                </Col>
+              </Row>
+            </Form>
+            <div
+              style={{
+                position: "absolute",
+                left: 0,
+                bottom: 0,
+                width: "100%",
+                borderTop: "1px solid #e9e9e9",
+                padding: "10px 16px",
+                background: "#fff",
+                textAlign: "right"
+              }}
+            >
+              <Button
+                type="danger"
+                icon="close"
+                onClick={this.onClose}
+                style={{ marginRight: 8, background: "#cc104b", color: "#FFF" }}
+              >
+                Cancel
+              </Button>
+              <Button icon="plus" onClick={this.onClose} type="primary">
+                Add
+              </Button>
+            </div>
+          </Drawer>
           <Drawer
             title="CREATE NEW EMPLOYEE"
             width={"60%"}
@@ -291,6 +506,112 @@ class CompanyMain extends React.Component {
               <Button icon="plus" onClick={this.onClose} type="primary">
                 Add
               </Button>
+            </div>
+          </Drawer>
+          <Drawer
+            title="CREATE NEW EMPLOYEE"
+            width={"60%"}
+            position={"bottom"}
+            onClose={this.handleCancel}
+            visible={this.state.visiblemodel}
+            footer={[
+              <Button key="back" onClick={this.handleCancel}>
+                Return
+              </Button>
+            ]}
+          >
+            <div>
+              <Row
+                style={{
+                  margin: "0px 0px 20px 0px"
+                }}
+              >
+                <Col span={24}>
+                  <Col span={6}> Module Name: </Col>
+                  <Col span={18}> ModuleName </Col>
+                </Col>
+                {/* <Col span={12}>col-12</Col> */}
+              </Row>
+              <Row
+                style={{
+                  margin: "0px 0px 20px 0px"
+                }}
+              >
+                <Col span={24} style={{ border: "0px solid" }}>
+                  <Col span={6} style={{ border: "0px solid" }}>
+                    {" "}
+                    Description:{" "}
+                  </Col>
+                  <Col span={18}>
+                    {" "}
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                  </Col>
+                </Col>
+                {/* <Col span={12}>col-12</Col> */}
+              </Row>
+              <Row
+                style={{
+                  margin: "0px 0px 20px 0px"
+                }}
+              >
+                <Col span={24}>
+                  <Col span={6}> Detailed Description: </Col>
+                  <Col span={18}>
+                    {" "}
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Tenetur voluptatibus accusantium necessitatibus culpa
+                    exercitationem autem excepturi incidunt eveniet officiis
+                    eos, eius facere, nostrum voluptates, fuga earum aliquam
+                    esse blanditiis quae?{" "}
+                  </Col>
+                </Col>
+              </Row>
+              <Row
+                style={{
+                  margin: "0px 0px 20px 0px"
+                }}
+              >
+                <Col span={24}>
+                  <Col span={6}> Comments: </Col>
+                  <Col span={18}>
+                    {" "}
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Tenetur voluptatibus accusantium necessitatibus culpa
+                    exercitationem autem excepturi incidunt eveniet officiis
+                    eos, eius facere, nostrum voluptates, fuga earum aliquam
+                    esse blanditiis quae?. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Similique nisi in dignissimos.
+                    Saepe dolorem dolorum dolor consectetur perspiciatis quis
+                    molestiae, eligendi quisquam labore sunt in quas debitis,
+                    doloribus, aliquam nam!
+                  </Col>
+                </Col>
+              </Row>
+              <Row
+                style={{
+                  margin: "0px 0px 20px 0px"
+                }}
+              >
+                <Col span={24}>
+                  <Col span={6}> Defect Added By: </Col>
+                  <Col span={18}>Added By</Col>
+                </Col>
+              </Row>
+              <Row
+                style={{
+                  margin: "0px 0px 20px 0px"
+                }}
+              >
+                <Col span={24}>
+                  <Col span={6}> Added Date: </Col>
+                  <Col span={18}>Added Date</Col>
+                </Col>
+              </Row>
+              <Row
+                style={{
+                  margin: "0px 0px 20px 0px"
+                }}
+              />
             </div>
           </Drawer>
         </div>

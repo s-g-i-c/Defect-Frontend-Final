@@ -159,7 +159,7 @@ export default class ManageDefects extends Component {
         <Modal
           style={{ top: 10 }}
           visible={visible}
-          title="Company Admin"
+          title="DefectName"
           width="60%"
           onOk={this.handleOk}
           onCancel={this.handleCancel}
