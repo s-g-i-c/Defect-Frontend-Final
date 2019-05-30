@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Table, Button, Modal, Row, Col, Select } from "antd";
+import AddDefects from "./AddDefects";
 
 export default class ManageDefects extends Component {
   state = {
@@ -278,7 +279,9 @@ export default class ManageDefects extends Component {
             </Row>
           </div>
         </Modal>
-
+        <Row>
+          <AddDefects />
+        </Row>
         <Table
           columns={columns}
           dataSource={data}
