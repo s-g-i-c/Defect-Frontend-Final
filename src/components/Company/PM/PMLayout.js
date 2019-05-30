@@ -7,6 +7,7 @@ import "../../Assets/css/SideNav.css";
 import Dashboard from "./Dashboard";
 import Profile from "../../User/Profile";
 import ManageProjects from "../PM/ManageProjects";
+import Privillages from "./Privillages";
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -46,6 +47,12 @@ class PMLayout extends React.Component {
                 <Icon type="dingding" />
                 <span>Manage Projects</span>
                 <Link to="/ManageProjects" />
+              </Menu.Item>
+              <Menu.Item key="setting:2">
+                <Icon type="setting" />
+
+                <Link to="/privillages" />
+                <span>Privillages</span>
               </Menu.Item>
             </Menu>
           </Sider>
@@ -126,6 +133,7 @@ class PMLayout extends React.Component {
               <Route path="/PMLayout/Dashboard" component={Dashboard} />
               <Route path="/Manageprojects" component={ManageProjects} />
               <Route path="/profile" component={Profile} />
+              <Route path="/privillages" component={Privillages} />
             </Content>
           </Layout>
         </Layout>

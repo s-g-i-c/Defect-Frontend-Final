@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Line, Radar, HorizontalBar } from "react-chartjs-2";
-import { Row, Col, Card, Button, Icon, Progress } from "antd";
-
+import { Row, Col, Card, Button, Icon, Progress, Drawer } from "antd";
+import ConfigurationModel from "../CommonDashboards/ConfigurationModel";
 const data = {
   labels: ["January", "February", "March", "April", "May", "June", "July"],
   datasets: [

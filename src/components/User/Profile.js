@@ -9,8 +9,8 @@ class Profile extends Component {
       <div>
         <Row>
           <Col span={16}>
-            <Col span={2} />
-            <Col span={10}>
+            <Col span={3} />
+            <Col span={12}>
               <Row>Full Name</Row>
               <Row>
                 <Form.Item>
@@ -58,7 +58,6 @@ class Profile extends Component {
                   icon="check"
                   type="primary"
                   style={{
-                    size: "50%",
                     borderRadius: "15px 0 15px 0"
                   }}
                 >
@@ -70,7 +69,6 @@ class Profile extends Component {
                   icon="close"
                   onClick={this.onClose}
                   style={{
-                    size: "50%",
                     borderRadius: "15px 0 15px 0",
                     background: "#cc104b",
                     color: "#FFF"

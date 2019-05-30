@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import ProductAdminLayout from "../ProductAdmin/ProductAdminLayout";
 import CompanyAdminLayout from "../Company/CompanyAdmin/CompanyLayout";
 import PMLayout from "../Company/PM/PMLayout";
+import QALayout from "../Company/QA/QALayout";
+import Developer from "../Company/Developer/DeveloperLayout";
 class Main extends Component {
   render() {
     return (
@@ -22,6 +24,8 @@ class Main extends Component {
                 component={CompanyAdminLayout}
               />
               <Route path="/PMLayout/Dashboard" exact component={PMLayout} />
+              <Route path="/QALayout/Dashboard" exact component={QALayout} />
+              <Route path="/Developer/Dashboard" exact component={Developer} />
               <Col span={24}>
                 <Card
                   align="center"
@@ -67,7 +71,7 @@ class Main extends Component {
                         }}
                         icon="user"
                       />
-                      <Link push to={`/ProductAdminLayout/Dashboard`}>
+                      <Link push to={`/QALayout/Dashboard`}>
                         <h3>QA</h3>
                       </Link>
                     </Col>
@@ -135,7 +139,7 @@ class Main extends Component {
                         {" "}
                       </Avatar>
 
-                      <Link push to={`/ProductAdminLayout/Dashboard`}>
+                      <Link push to={`/Developer/Dashboard`}>
                         <h3>Developers</h3>
                       </Link>
                     </Col>
