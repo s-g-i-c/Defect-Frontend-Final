@@ -162,24 +162,14 @@ class CompanyMain extends React.Component {
 
         render: () => (
           <span>
-            <Popconfirm
-              title="Are you sure, do you want edit this Company?"
-              icon={
-                <Icon type="question-circle-o" style={{ color: "primary" }} />
-              }
-              onCancel={this.cancel}
-              okText="Yes"
-              cancelText="No"
-            >
-              <Tooltip title="Edit">
-                <Icon
-                  type="edit"
-                  onClick={this.showDrawer}
-                  className="datatable-icon"
-                  style={{ color: "primary" }}
-                />
-              </Tooltip>
-            </Popconfirm>
+            <Tooltip title="Edit">
+              <Icon
+                type="edit"
+                onClick={this.showDrawer}
+                className="datatable-icon"
+                style={{ color: "primary" }}
+              />
+            </Tooltip>
             <Divider type="vertical" />
             &nbsp; &nbsp;
             <Popconfirm

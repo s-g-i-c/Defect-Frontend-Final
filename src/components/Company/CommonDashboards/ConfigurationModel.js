@@ -60,8 +60,11 @@ export default class ConfigurationModel extends Component {
         </Row>
         <Row>
           <Col style={{ textAlign: "right" }}>
-            <Card bordered={false} style={{ width: 215 }}>
-              <Button type="primary"> Apply </Button>
+            <Card bordered={false} style={{ width: "215" }}>
+              <Button type="primary" style={{ size: "100%" }}>
+                {" "}
+                Apply{" "}
+              </Button>
             </Card>
           </Col>
         </Row>
