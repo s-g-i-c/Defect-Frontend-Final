@@ -1,7 +1,8 @@
 import React from "react";
 import "antd/dist/antd.css";
-import { Table, Icon, Button, Modal } from "antd";
+import { Table, Icon, Button, Drawer } from "antd";
 import EditModel from "./Editproject";
+// import Project from "./Project";
 
 class Projectview extends React.Component {
   state = { visible: false };
@@ -116,16 +117,21 @@ class Projectview extends React.Component {
     ];
     return (
       <div
-        style={{ width: 1000, padding: 24, background: "#fff", minHeight: 300 }}
+        style={{
+          width: "100%",
+          padding: 24,
+          background: "#fff",
+          minHeight: 300
+        }}
       >
-        <Modal
-          title="Update Project Info"
+        <Drawer
+          title="Edit Project"
+          width={"60%"}
+          onClose={this.handleCancel}
           visible={this.state.visible}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
         >
           <EditModel />
-        </Modal>
+        </Drawer>
         <Table columns={columns} dataSource={data} />
       </div>
     );

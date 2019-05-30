@@ -15,16 +15,15 @@ import {
   Row,
   Tooltip,
   Upload,
-  message,
-  Timeline,
-  Avatar
+  message
 } from "antd";
 
 const { Option } = Select;
 class CompanyMain extends React.Component {
   state = {
     loading: false,
-    visible: false
+    visible: false,
+    visiblemodel: false
   };
 
   showDrawer = () => {
@@ -167,7 +166,7 @@ class CompanyMain extends React.Component {
                 type="edit"
                 onClick={this.showDrawer}
                 className="datatable-icon"
-                style={{ color: "primary" }}
+                style={{ color: "blue" }}
               />
             </Tooltip>
             <Divider type="vertical" />
@@ -358,250 +357,6 @@ class CompanyMain extends React.Component {
               <Button icon="plus" onClick={this.onClose} type="primary">
                 Add
               </Button>
-            </div>
-          </Drawer>
-          <Drawer
-            title="CREATE NEW EMPLOYEE"
-            width={"60%"}
-            position={"bottom"}
-            onClose={this.onClose}
-            visible={this.state.visible}
-          >
-            <Form layout="vertical" hideRequiredMark>
-              <Row gutter={16}>
-                <Col span={12}>
-                  <Form.Item label="Employee ID">
-                    <Input
-                      value="#EMP101"
-                      id="employeeId"
-                      disabled
-                      style={{
-                        border: "1px solid #719ECE"
-                      }}
-                    />
-                  </Form.Item>
-                </Col>
-                <Col span={12}>
-                  <Form.Item label="Employee Name">
-                    <Input
-                      placeholder="Please Enter Employee Name"
-                      id="employeeName"
-                      style={{ border: "1px solid #719ECE" }}
-                    />
-                  </Form.Item>
-                </Col>
-                <Col span={12}>
-                  <Form.Item label="Designation">
-                    <Input
-                      placeholder="Designation"
-                      style={{ border: "1px solid #719ECE" }}
-                    />
-                  </Form.Item>
-                </Col>
-                <Col span={12}>
-                  <Form.Item label="Email_ID">
-                    <Input
-                      placeholder="Email ID"
-                      style={{ border: "1px solid #719ECE" }}
-                    />
-                  </Form.Item>
-                </Col>
-
-                <Col span={12}>
-                  <Form.Item label="Contract Period">
-                    <Input
-                      value="3 Years"
-                      id="Contract Period"
-                      style={{
-                        border: "1px solid #719ECE"
-                      }}
-                    />
-                  </Form.Item>
-                </Col>
-                <Col span={12}>
-                  <Form.Item label="Joining Date">
-                    <DatePicker
-                      getPopupContainer={trigger => trigger.parentNode}
-                      style={{
-                        border: "1px solid #719ECE",
-                        borderRadius: "4px",
-                        width: "100%"
-                      }}
-                    />
-                  </Form.Item>
-                </Col>
-
-                <Col span={10} type="dashed">
-                  <Avatar
-                    style={{
-                      margin: "16px 0 0  55px",
-                      background: "linear-gradient(to right, #7474bf, #348ac7)"
-                    }}
-                    size={144}
-                    icon="user"
-                  />
-                </Col>
-                <Col span={2}>
-                  <Timeline>
-                    <Timeline.Item />
-                    <br />
-
-                    <br />
-                    <br />
-                    <p>OR</p>
-                    <br />
-
-                    <br />
-                    <br />
-                    <Timeline.Item />
-                  </Timeline>
-                </Col>
-                <Col span={12}>
-                  {" "}
-                  <Dragger {...props}>
-                    <p className="ant-upload-drag-icon">
-                      <Icon type="inbox" />
-                    </p>
-                    <p className="ant-upload-text">
-                      Click or drag file to this area to upload
-                    </p>
-                    <p className="ant-upload-hint">
-                      Support for a single or bulk upload. Strictly prohibit
-                      from uploading company data or other band files
-                    </p>
-                  </Dragger>
-                </Col>
-              </Row>
-            </Form>
-            <div
-              style={{
-                position: "absolute",
-                left: 0,
-                bottom: 0,
-                width: "100%",
-                borderTop: "1px solid #e9e9e9",
-                padding: "10px 16px",
-                background: "#fff",
-                textAlign: "right"
-              }}
-            >
-              <Button
-                type="danger"
-                icon="close"
-                onClick={this.onClose}
-                style={{ marginRight: 8, background: "#cc104b", color: "#FFF" }}
-              >
-                Cancel
-              </Button>
-              <Button icon="plus" onClick={this.onClose} type="primary">
-                Add
-              </Button>
-            </div>
-          </Drawer>
-          <Drawer
-            title="CREATE NEW EMPLOYEE"
-            width={"60%"}
-            position={"bottom"}
-            onClose={this.handleCancel}
-            visible={this.state.visiblemodel}
-            footer={[
-              <Button key="back" onClick={this.handleCancel}>
-                Return
-              </Button>
-            ]}
-          >
-            <div>
-              <Row
-                style={{
-                  margin: "0px 0px 20px 0px"
-                }}
-              >
-                <Col span={24}>
-                  <Col span={6}> Module Name: </Col>
-                  <Col span={18}> ModuleName </Col>
-                </Col>
-                {/* <Col span={12}>col-12</Col> */}
-              </Row>
-              <Row
-                style={{
-                  margin: "0px 0px 20px 0px"
-                }}
-              >
-                <Col span={24} style={{ border: "0px solid" }}>
-                  <Col span={6} style={{ border: "0px solid" }}>
-                    {" "}
-                    Description:{" "}
-                  </Col>
-                  <Col span={18}>
-                    {" "}
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-                  </Col>
-                </Col>
-                {/* <Col span={12}>col-12</Col> */}
-              </Row>
-              <Row
-                style={{
-                  margin: "0px 0px 20px 0px"
-                }}
-              >
-                <Col span={24}>
-                  <Col span={6}> Detailed Description: </Col>
-                  <Col span={18}>
-                    {" "}
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Tenetur voluptatibus accusantium necessitatibus culpa
-                    exercitationem autem excepturi incidunt eveniet officiis
-                    eos, eius facere, nostrum voluptates, fuga earum aliquam
-                    esse blanditiis quae?{" "}
-                  </Col>
-                </Col>
-              </Row>
-              <Row
-                style={{
-                  margin: "0px 0px 20px 0px"
-                }}
-              >
-                <Col span={24}>
-                  <Col span={6}> Comments: </Col>
-                  <Col span={18}>
-                    {" "}
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Tenetur voluptatibus accusantium necessitatibus culpa
-                    exercitationem autem excepturi incidunt eveniet officiis
-                    eos, eius facere, nostrum voluptates, fuga earum aliquam
-                    esse blanditiis quae?. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Similique nisi in dignissimos.
-                    Saepe dolorem dolorum dolor consectetur perspiciatis quis
-                    molestiae, eligendi quisquam labore sunt in quas debitis,
-                    doloribus, aliquam nam!
-                  </Col>
-                </Col>
-              </Row>
-              <Row
-                style={{
-                  margin: "0px 0px 20px 0px"
-                }}
-              >
-                <Col span={24}>
-                  <Col span={6}> Defect Added By: </Col>
-                  <Col span={18}>Added By</Col>
-                </Col>
-              </Row>
-              <Row
-                style={{
-                  margin: "0px 0px 20px 0px"
-                }}
-              >
-                <Col span={24}>
-                  <Col span={6}> Added Date: </Col>
-                  <Col span={18}>Added Date</Col>
-                </Col>
-              </Row>
-              <Row
-                style={{
-                  margin: "0px 0px 20px 0px"
-                }}
-              />
             </div>
           </Drawer>
         </div>

@@ -24,7 +24,8 @@ const { Option } = Select;
 class CompanyMain extends React.Component {
   state = {
     loading: false,
-    visible: false
+    visible: false,
+    visiblemodel: false
   };
 
   showDrawer = () => {
@@ -80,81 +81,81 @@ class CompanyMain extends React.Component {
     const dataSource = [
       {
         key: "id",
-        id: "C678",
-        name: "Samuel Gnanam",
-        abbreviation: "Sgic",
-        period: "1Year",
-        admin: "Mathan"
+        id: "E678",
+        name: "Mathan",
+        email: "mathan@gmail.com",
+        designation: "Software Engineer",
+        joindate: "25/5/2019",
+        contract: "1 Year"
       },
       {
         key: "id",
-        id: "C452",
-        name: "Invicta Inovations",
-        abbreviation: "Invicta",
-        period: "1Year",
-        admin: "Theepan"
-      },
-
-      {
-        key: "id",
-        id: "C124",
-        name: "Sysco Labs",
-        abbreviation: "Sysco",
-        period: "1Year",
-        admin: "Hari"
-      },
-
-      {
-        key: "id",
-        id: "C777",
-        name: "Mithra inovations",
-        abbreviation: "mithra",
-        period: "2Year",
-        admin: "Tyron"
+        id: "E678",
+        name: "Mathan",
+        email: "mathan@gmail.com",
+        designation: "Software Engineer",
+        joindate: "25/5/2019",
+        contract: "1 Year"
       },
       {
         key: "id",
-        id: "C678",
-        name: "Samuel Gnanam",
-        abbreviation: "Sgic",
-        period: "1Year",
-        admin: "Mathan"
+        id: "E678",
+        name: "Mathan",
+        email: "mathan@gmail.com",
+        designation: "Software Engineer",
+        joindate: "25/5/2019",
+        contract: "1 Year"
       },
       {
         key: "id",
-        id: "C452",
-        name: "Invicta Inovations",
-        abbreviation: "Invicta",
-        period: "1Year",
-        admin: "Theepan"
+        id: "E678",
+        name: "Mathan",
+        email: "mathan@gmail.com",
+        designation: "Software Engineer",
+        joindate: "25/5/2019",
+        contract: "1 Year"
+      },
+      {
+        key: "id",
+        id: "E678",
+        name: "Mathan",
+        email: "mathan@gmail.com",
+        designation: "Software Engineer",
+        joindate: "25/5/2019",
+        contract: "1 Year"
       }
     ];
     const columns = [
       {
-        title: "Company ID",
+        title: "Employee ID",
         dataIndex: "id",
         key: "id"
       },
       {
-        title: "Company Name",
+        title: "Employee Name",
         dataIndex: "name",
         key: "name"
       },
       {
-        title: "Abbreviation",
-        dataIndex: "abbreviation",
-        key: "abbreviation"
+        title: "Email",
+        dataIndex: "email",
+        key: "email"
       },
       {
-        title: "Lisence period",
-        dataIndex: "period",
-        key: "period"
+        title: "Designation",
+        dataIndex: "designation",
+        key: "designation"
       },
 
       {
-        title: "Company Admin",
-        dataIndex: "admin",
-        key: "admin"
+        title: "Join Date",
+        dataIndex: "joindate",
+        key: "joindate"
+      },
+      {
+        title: "Contract",
+        dataIndex: "contract",
+        key: "contract"
       },
       {
         title: "Action",
@@ -162,24 +163,14 @@ class CompanyMain extends React.Component {
 
         render: () => (
           <span>
-            <Popconfirm
-              title="Are you sure, do you want edit this Company?"
-              icon={
-                <Icon type="question-circle-o" style={{ color: "primary" }} />
-              }
-              onCancel={this.cancel}
-              okText="Yes"
-              cancelText="No"
-            >
-              <Tooltip title="Edit">
-                <Icon
-                  type="edit"
-                  onClick={this.showDrawer}
-                  className="datatable-icon"
-                  style={{ color: "primary" }}
-                />
-              </Tooltip>
-            </Popconfirm>
+            <Tooltip title="Edit">
+              <Icon
+                type="edit"
+                onClick={this.showDrawer}
+                className="datatable-icon"
+                style={{ color: "blue" }}
+              />
+            </Tooltip>
             <Divider type="vertical" />
             &nbsp; &nbsp;
             <Popconfirm

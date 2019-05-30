@@ -35,7 +35,6 @@ class SiderNav extends React.Component {
           >
             <div className="logo">
               <img src={logo} padding="10" width="65px" alt="logo" />
-              <a href="/">Defect.T</a>
             </div>
             <Menu theme="dark " mode="inline" defaultSelectedKeys={["1"]}>
               <Menu.Item key="1">
@@ -48,7 +47,7 @@ class SiderNav extends React.Component {
                 <Icon type="folder-add" />
 
                 <span>Manage Employees</span>
-                <Link to={`/Manage`} />
+                <Link to={`/Managec`} />
               </Menu.Item>
               <Menu.Item key="setting:2">
                 <Link to={`/privillages`} />
@@ -137,7 +136,7 @@ class SiderNav extends React.Component {
                 path="/CompanyAdminLayout/Dashboard"
                 component={Dashboard}
               />
-              <Route path="/Manage" component={CompanyMain} />
+              <Route path="/Managec" component={CompanyMain} />
               <Route path="/profile" component={Profile} />
               <Route path="/privillages" component={Privillages} />
             </Content>
