@@ -10,7 +10,7 @@ import "antd/dist/antd.css";
 // import Login from "./components/User/Login";
 // import Routes from "./components/User/Routes";
 
-import ManDef from "./components/Company/PM/Allocation";
+import ManDef from "./components/Company/HR/ManageAllocations";
 
 // import QAPrivilage from "./components/Company/QA/Privillages";
 // import PAPrivilage from "./components/ProductAdmin/Privillages";
