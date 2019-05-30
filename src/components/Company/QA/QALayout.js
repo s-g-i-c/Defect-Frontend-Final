@@ -7,6 +7,7 @@ import "../../Assets/css/SideNav.css";
 import Dashboard from "./Dashboard";
 import Privillages from "./Privillages";
 import Profile from "../../User/Profile";
+import ManageDefects from "../Defects/ManageDefects";
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -45,6 +46,7 @@ class SiderNav extends React.Component {
               <Menu.Item key="2">
                 <Icon type="folder-add" />
                 <span>Defects</span>
+                <Link to="/manageDefects" />
               </Menu.Item>
               <Menu.Item key="3">
                 <Icon type="setting" />
@@ -130,6 +132,7 @@ class SiderNav extends React.Component {
               <Route path="/QALayout/Dashboard" component={Dashboard} />
               <Route path="/privillage" component={Privillages} />
               <Route path="/profile" component={Profile} />
+              <Route path="/manageDefects" component={ManageDefects} />
             </Content>
           </Layout>
         </Layout>

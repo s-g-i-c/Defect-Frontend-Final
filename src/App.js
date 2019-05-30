@@ -9,6 +9,7 @@ import "antd/dist/antd.css";
 import Main from "./components/MainPanel/Main";
 // import Login from "./components/User/Login";
 // import Routes from "./components/User/Routes";
+// import ManDef from "./components/Company/Defects/ManageDefects";
 
 // import QAPrivilage from "./components/Company/QA/Privillages";
 // import PAPrivilage from "./components/ProductAdmin/Privillages";
@@ -23,11 +24,12 @@ function App() {
       {/* <PMLayout /> */}
       {/* <CommonLayout /> */}
       <Main />
-      {/* <Login />  */}
+      {/* <Login /> */}
       {/* <Routes />
 
       {/* <QAPrivilage /> */}
       {/* <PAPrivilage /> */}
+      {/* <ManDef /> */}
     </div>
   );
 }

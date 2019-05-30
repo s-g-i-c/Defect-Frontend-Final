@@ -252,6 +252,7 @@ class CompanyMain extends React.Component {
                   </Timeline>
                 </Col>
                 <Col span={12}>
+                  {" "}
                   <Dragger {...props}>
                     <p className="ant-upload-drag-icon">
                       <Icon type="inbox" />

@@ -14,29 +14,98 @@ import {
   Row,
   Tooltip,
   Avatar,
-  Timeline
+  Timeline,
+  Upload,
+  message,
+  Select
 } from "antd";
 
 class CompanyMain extends React.Component {
   state = {
     loading: false,
     visible: false,
+    visiblemodel: false,
     placement: "bottom"
   };
 
   showDrawer = () => {
     this.setState({
-      visible: true
+      visiblemodel: true
     });
   };
 
   onClose = () => {
     this.setState({
+      visiblemodel: false
+    });
+  };
+  showModal = () => {
+    this.setState({
+      visiblemodel: true
+    });
+  };
+
+  handleOk = e => {
+    console.log(e);
+    this.setState({
+      visible: false
+    });
+  };
+  handleCancel = e => {
+    console.log(e);
+    this.setState({
       visible: false
     });
   };
 
+  handleChange = (pagination, filters, sorter) => {
+    console.log("Various parameters", pagination, filters, sorter);
+    this.setState({
+      filteredInfo: filters,
+      sortedInfo: sorter
+    });
+  };
+
+  clearFilters = () => {
+    this.setState({ filteredInfo: null });
+  };
+
+  clearAll = () => {
+    this.setState({
+      filteredInfo: null,
+      sortedInfo: null
+    });
+  };
+
+  setAgeSort = () => {
+    this.setState({
+      sortedInfo: {
+        order: "descend",
+        columnKey: "age"
+      }
+    });
+  };
+
   render() {
+    const Dragger = Upload.Dragger;
+    const { visiblemodel } = this.state; // for Model
+
+    const props = {
+      name: "file",
+      multiple: true,
+      action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
+      onChange(info) {
+        const status = info.file.status;
+        if (status !== "uploading") {
+          console.log(info.file, info.fileList);
+        }
+        if (status === "done") {
+          message.success(`${info.file.name} file uploaded successfully.`);
+        } else if (status === "error") {
+          message.error(`${info.file.name} file upload failed.`);
+        }
+      }
+    };
     const dataSource = [
       {
         key: "id",
@@ -113,11 +182,13 @@ class CompanyMain extends React.Component {
             </Popconfirm>
             <Divider type="vertical" />
             &nbsp; &nbsp;
-            <a href="hello" style={{ color: "green" }}>
-              <Tooltip title="Full View">
-                <Icon type="fullscreen" className="datatable-icon" />
-              </Tooltip>
-            </a>
+            <Tooltip title="Full View">
+              <Icon
+                type="fullscreen"
+                className="datatable-icon"
+                onClick={this.showModal}
+              />
+            </Tooltip>
           </span>
         )
       }
@@ -231,6 +302,21 @@ class CompanyMain extends React.Component {
                     <Timeline.Item />
                   </Timeline>
                 </Col>
+                <Col span={12}>
+                  {" "}
+                  <Dragger {...props}>
+                    <p className="ant-upload-drag-icon">
+                      <Icon type="inbox" />
+                    </p>
+                    <p className="ant-upload-text">
+                      Click or drag file to this area to upload
+                    </p>
+                    <p className="ant-upload-hint">
+                      Support for a single or bulk upload. Strictly prohibit
+                      from uploading company data or other band files
+                    </p>
+                  </Dragger>
+                </Col>
               </Row>
             </Form>
             <div
@@ -256,6 +342,112 @@ class CompanyMain extends React.Component {
               <Button icon="plus" onClick={this.onClose} type="primary">
                 Add
               </Button>
+            </div>
+          </Drawer>
+          <Drawer
+            visible={visiblemodel}
+            title="Company Admin"
+            width="60%"
+            onOk={this.handleOk}
+            onCancel={this.handleCancel}
+            footer={[
+              <Button key="back" onClick={this.handleCancel}>
+                Return
+              </Button>
+            ]}
+          >
+            <div>
+              <Row
+                style={{
+                  margin: "0px 0px 20px 0px"
+                }}
+              >
+                <Col span={24}>
+                  <Col span={6}> Module Name: </Col>
+                  <Col span={18}> ModuleName </Col>
+                </Col>
+                {/* <Col span={12}>col-12</Col> */}
+              </Row>
+              <Row
+                style={{
+                  margin: "0px 0px 20px 0px"
+                }}
+              >
+                <Col span={24} style={{ border: "0px solid" }}>
+                  <Col span={6} style={{ border: "0px solid" }}>
+                    {" "}
+                    Description:{" "}
+                  </Col>
+                  <Col span={18}>
+                    {" "}
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                  </Col>
+                </Col>
+                {/* <Col span={12}>col-12</Col> */}
+              </Row>
+              <Row
+                style={{
+                  margin: "0px 0px 20px 0px"
+                }}
+              >
+                <Col span={24}>
+                  <Col span={6}> Detailed Description: </Col>
+                  <Col span={18}>
+                    {" "}
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Tenetur voluptatibus accusantium necessitatibus culpa
+                    exercitationem autem excepturi incidunt eveniet officiis
+                    eos, eius facere, nostrum voluptates, fuga earum aliquam
+                    esse blanditiis quae?{" "}
+                  </Col>
+                </Col>
+              </Row>
+              <Row
+                style={{
+                  margin: "0px 0px 20px 0px"
+                }}
+              >
+                <Col span={24}>
+                  <Col span={6}> Comments: </Col>
+                  <Col span={18}>
+                    {" "}
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Tenetur voluptatibus accusantium necessitatibus culpa
+                    exercitationem autem excepturi incidunt eveniet officiis
+                    eos, eius facere, nostrum voluptates, fuga earum aliquam
+                    esse blanditiis quae?. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Similique nisi in dignissimos.
+                    Saepe dolorem dolorum dolor consectetur perspiciatis quis
+                    molestiae, eligendi quisquam labore sunt in quas debitis,
+                    doloribus, aliquam nam!
+                  </Col>
+                </Col>
+              </Row>
+              <Row
+                style={{
+                  margin: "0px 0px 20px 0px"
+                }}
+              >
+                <Col span={24}>
+                  <Col span={6}> Defect Added By: </Col>
+                  <Col span={18}>Added By</Col>
+                </Col>
+              </Row>
+              <Row
+                style={{
+                  margin: "0px 0px 20px 0px"
+                }}
+              >
+                <Col span={24}>
+                  <Col span={6}> Added Date: </Col>
+                  <Col span={18}>Added Date</Col>
+                </Col>
+              </Row>
+              <Row
+                style={{
+                  margin: "0px 0px 20px 0px"
+                }}
+              />
             </div>
           </Drawer>
         </div>

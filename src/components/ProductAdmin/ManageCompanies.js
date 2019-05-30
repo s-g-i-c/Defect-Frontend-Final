@@ -150,15 +150,14 @@ class CompanyMain extends React.Component {
               okText="Yes"
               cancelText="No"
             >
-              <a href="hello">
-                <Tooltip title="Edit">
-                  <Icon
-                    type="edit"
-                    className="datatable-icon"
-                    style={{ color: "primary" }}
-                  />
-                </Tooltip>
-              </a>
+              <Tooltip title="Edit">
+                <Icon
+                  type="edit"
+                  onClick={this.showDrawer}
+                  className="datatable-icon"
+                  style={{ color: "primary" }}
+                />
+              </Tooltip>
             </Popconfirm>
             <Divider type="vertical" />
             &nbsp; &nbsp;
