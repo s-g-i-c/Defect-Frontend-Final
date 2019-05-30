@@ -8,6 +8,7 @@ import Dashboard from "./Dashboard";
 import Profile from "../../User/Profile";
 import ManageProjects from "../PM/ManageProjects";
 import Privillages from "./Privillages";
+import AddModule from "./AddModule";
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -53,6 +54,11 @@ class PMLayout extends React.Component {
 
                 <Link to="/privillages" />
                 <span>Privillages</span>
+              </Menu.Item>
+              <Menu.Item key="setting">
+                <Icon type="plus-square" />
+                <Link to="/module" />
+                <span>Manage Modules</span>
               </Menu.Item>
             </Menu>
           </Sider>
@@ -134,6 +140,7 @@ class PMLayout extends React.Component {
               <Route path="/Manageprojects" component={ManageProjects} />
               <Route path="/profile" component={Profile} />
               <Route path="/privillages" component={Privillages} />
+              <Route path="/module" component={AddModule} />
             </Content>
           </Layout>
         </Layout>

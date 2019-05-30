@@ -52,7 +52,7 @@ const TableTransfer = ({ leftColumns, rightColumns, ...restProps }) => (
 const mockTags = [
   "QA",
   "Developer",
-  "architecture",
+  "architect",
   "Senior Engineer",
   "Tech Lead"
 ];

@@ -1,11 +1,18 @@
 import React, { Component } from "react";
-import { Form, Row, Col, Input, DatePicker, Select } from "antd";
+import { Form, Row, Col, Input, DatePicker, Select, Button } from "antd";
 
 function onChange(date, dateString) {
   console.log(date, dateString);
 }
 
 export default class Editproject extends Component {
+  state = { visible: false };
+
+  onClose = () => {
+    this.setState({
+      visible: false
+    });
+  };
   render() {
     return (
       <div>
@@ -60,6 +67,17 @@ export default class Editproject extends Component {
               </Form.Item>
             </Col>
           </Row>
+          <Button
+            type="danger"
+            icon="close"
+            onClick={this.onClose}
+            style={{ marginRight: 8, background: "#cc104b", color: "#FFF" }}
+          >
+            Cancel
+          </Button>
+          <Button icon="plus" onClick={this.onClose} type="primary">
+            Add
+          </Button>
         </Form>
       </div>
     );

@@ -6,6 +6,7 @@ import CompanyAdminLayout from "../Company/CompanyAdmin/CompanyLayout";
 import PMLayout from "../Company/PM/PMLayout";
 import QALayout from "../Company/QA/QALayout";
 import Developer from "../Company/Developer/DeveloperLayout";
+import HRLayout from "../Company/HR/HRLayout";
 class Main extends Component {
   render() {
     return (
@@ -26,6 +27,7 @@ class Main extends Component {
               <Route path="/PMLayout/Dashboard" exact component={PMLayout} />
               <Route path="/QALayout/Dashboard" exact component={QALayout} />
               <Route path="/Developer/Dashboard" exact component={Developer} />
+              <Route path="/HR/ManageAllocations" exact component={HRLayout} />
               <Col span={24}>
                 <Card
                   align="center"
@@ -33,6 +35,7 @@ class Main extends Component {
                   bold={true}
                   bordered={true}
                   style={{
+                    size: "10%",
                     padding: "10%",
                     width: "100%",
                     border: "1px solod #4A569D",
@@ -72,7 +75,7 @@ class Main extends Component {
                         icon="user"
                       />
                       <Link push to={`/QALayout/Dashboard`}>
-                        <h3>QA</h3>
+                        <h3>QUALITY ASSURANCE</h3>
                       </Link>
                     </Col>
                     &nbsp;
@@ -119,9 +122,7 @@ class Main extends Component {
                             "linear-gradient(to right, #de6262, #ffb88c)",
                           borderRadius: "50px 0 50px 0"
                         }}
-                      >
-                        {" "}
-                      </Avatar>
+                      />
 
                       <Link push to={`/Developer/Dashboard`}>
                         <h3 align="center">DEVELOPERS</h3>
@@ -136,10 +137,10 @@ class Main extends Component {
                             "linear-gradient(to right, #DC2424, #4A569D)",
                           borderRadius: "50px 0 50px 0"
                         }}
-                        icon="exclamation"
+                        icon="user"
                       />
-                      <Link push to={`/ProductAdminLayout/Dashboard`}>
-                        <h3>HELP DESK</h3>
+                      <Link push to={`/HR/ManageAllocations`}>
+                        <h3 align="center"> HR </h3>
                       </Link>
                     </Col>
                   </Row>

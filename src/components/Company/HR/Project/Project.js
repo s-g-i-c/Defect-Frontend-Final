@@ -1,5 +1,15 @@
 import React, { Component } from "react";
-import { Modal, Button, Row, Col, Form, Input, DatePicker, Select } from "antd";
+import {
+  Drawer,
+  Button,
+  Row,
+  Col,
+  Form,
+  Input,
+  DatePicker,
+  Select,
+  Icon
+} from "antd";
 import "antd/dist/antd.css";
 import Projectview from "./Projectview";
 
@@ -29,24 +39,26 @@ export default class Project extends Component {
       visible: false
     });
   };
+  onClose = () => {
+    this.setState({
+      visible: false
+    });
+  };
 
   render() {
     return (
       <div>
-        <br />
-        <h1>PROJECT INF0</h1>
-        <br />
         <Button type="primary" onClick={this.showModal}>
-          Add Project
+          <Icon type="plus" /> Add Project
         </Button>
 
         <Projectview />
 
-        <Modal
-          title="Add Project Info"
+        <Drawer
+          title="ADD PROJECT INFO"
+          width={"60%"}
+          onClose={this.onClose}
           visible={this.state.visible}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
         >
           <Form>
             <Row>
@@ -103,8 +115,28 @@ export default class Project extends Component {
                 </Form.Item>
               </Col>
             </Row>
+            <Row>
+              <Col span={13} />
+              <Col span={11}>
+                <Button
+                  type="danger"
+                  icon="close"
+                  onClick={this.onClose}
+                  style={{
+                    marginRight: 8,
+                    background: "#cc104b",
+                    color: "#FFF"
+                  }}
+                >
+                  Cancel
+                </Button>
+                <Button icon="plus" onClick={this.onClose} type="primary">
+                  Add
+                </Button>
+              </Col>
+            </Row>
           </Form>
-        </Modal>
+        </Drawer>
       </div>
     );
   }

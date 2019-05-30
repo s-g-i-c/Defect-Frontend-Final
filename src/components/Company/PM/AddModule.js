@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Input, Modal, Row, Col } from "antd";
+import { Form, Input, Drawer, Row, Col, Button } from "antd";
 
 export default class AddModule extends Component {
   state = { visible: false };
@@ -9,7 +9,11 @@ export default class AddModule extends Component {
       visible: true
     });
   };
-
+  onClose = () => {
+    this.setState({
+      visible: false
+    });
+  };
   hideModal = () => {
     this.setState({
       visible: false
@@ -18,15 +22,16 @@ export default class AddModule extends Component {
   render() {
     return (
       <div>
+        <Button onClick={this.showModal} type="primary">
+          Add Module
+        </Button>
 
-          
-        <Modal
-          title="EditModal"
+        <Drawer
+          title="Add Module"
+          width={"50%"}
+          position={"bottom"}
+          onClose={this.onClose}
           visible={this.state.visible}
-          onOk={this.hideModal}
-          onCancel={this.hideModal}
-          okText="Update"
-          cancelText="cancel"
         >
           <Row>
             <Form>
@@ -49,7 +54,7 @@ export default class AddModule extends Component {
               </Row>
             </Form>
           </Row>
-        </Modal>
+        </Drawer>
       </div>
     );
   }
