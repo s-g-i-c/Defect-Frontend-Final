@@ -7,6 +7,7 @@ import "../Assets/css/SideNav.css";
 import Dashboard from "./Dashboard";
 import Profile from "../User/Profile";
 import ManageCompanies from "./ManageCompanies";
+import Privillages from "./Privillages";
 
 const { Header, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -45,6 +46,12 @@ class SiderNav extends React.Component {
                 <Link to={`/ManageCompanies`} />
                 <Icon type="folder-add" />
                 <span>ManageCompanies</span>
+              </Menu.Item>
+              <Menu.Item key="3">
+                <Link to={`/ManageCompanies`} />
+                <Icon type="info" />
+                <span>Privillages</span>
+                <Link to="/privillage" />
               </Menu.Item>
             </Menu>
           </Sider>
@@ -128,6 +135,7 @@ class SiderNav extends React.Component {
               />
               <Route path="/Profile" component={Profile} />
               <Route path="/ManageCompanies" component={ManageCompanies} />
+              <Route path="/privillage" component={Privillages} />
             </Content>
           </Layout>
         </Layout>
