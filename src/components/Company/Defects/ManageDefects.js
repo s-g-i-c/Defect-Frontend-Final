@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {
   Table,
   Button,
-  Modal,
   Row,
   Icon,
   Divider,
@@ -32,9 +31,9 @@ export default class ManageDefects extends Component {
     });
   };
 
-  onClose = () => {
+  onClosex = () => {
     this.setState({
-      visible: false
+      visibleModel: false
     });
   };
 
@@ -94,7 +93,12 @@ export default class ManageDefects extends Component {
       sortedInfo: null
     });
   };
-
+  onClose = () => {
+    this.setState({
+      visible: false,
+      visiblemodel: false
+    });
+  };
   setAgeSort = () => {
     this.setState({
       sortedInfo: {
@@ -246,8 +250,7 @@ export default class ManageDefects extends Component {
 
     return (
       <div>
-        <Modal
-          style={{ top: 10 }}
+        <Drawer
           visible={this.state.visibleModel}
           title="DefectName"
           width="60%"
@@ -260,14 +263,13 @@ export default class ManageDefects extends Component {
           ]}
         >
           <AddDefectForm />
-        </Modal>
+        </Drawer>
 
-        <Modal
-          style={{ top: 10 }}
+        <Drawer
           visible={this.state.ModelMore}
           title="DefectName"
           width="60%"
-          onOk={this.handleOkMore}
+          onClose={this.handleOkMore}
           onCancel={this.handleCancelMore}
           footer={[
             <Button key="back" onClick={this.handleCancelMore}>
@@ -303,13 +305,15 @@ export default class ManageDefects extends Component {
               </Col>
             </Col>
           </Row>
-        </Modal>
+        </Drawer>
 
         <Drawer
-          title="CREATE NEW COMPANY"
-          width={"60%"}
-          onClose={this.onClose}
+          title="CREATE NEW DEFECT"
           visible={this.state.visible}
+          title="DefectName"
+          width="60%"
+          onClose={this.onClose}
+          onCancel={this.onClose}
         >
           <EditDefect />
         </Drawer>

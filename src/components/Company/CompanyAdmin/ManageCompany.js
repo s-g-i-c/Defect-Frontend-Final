@@ -206,7 +206,7 @@ class CompanyMain extends React.Component {
         <div style={{ padding: 4, background: "#f5f5f5;", minHeight: 360 }}>
           <Button type="primary" onClick={this.showDrawer}>
             <Icon type="plus" />
-            Add Company
+            Add Employee
           </Button>
           <br />
           <br />
