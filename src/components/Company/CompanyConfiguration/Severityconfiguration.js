@@ -3,12 +3,8 @@ import "antd/dist/antd.css";
 import { Input } from "antd";
 import { Button, Icon, Row, Col, Modal, Select } from "antd";
 import "../../../index.css";
-import Severityconfiguration from "./Severityconfiguration";
-import Priorityconfiguration from "./Priorityconfiguration";
-import Statusconfiguration from "./Statusconfiguration";
-import Module from "./Module";
 
-export default class Config extends Component {
+export default class Severityconfiguration extends Component {
   state = { visible: false };
 
   showModal = () => {
@@ -32,7 +28,6 @@ export default class Config extends Component {
   };
   render() {
     const { Option } = Select;
-
     return (
       <div>
         <Modal
@@ -54,8 +49,8 @@ export default class Config extends Component {
             }}
           >
             <Row>
-              <Col span={4} id="configDiv">
-                Defect Type
+              <Col span={3} id="configDiv">
+                Severity
               </Col>
             </Row>
             <Row style={{ marginBottom: "20px" }}>
@@ -71,9 +66,9 @@ export default class Config extends Component {
                       <Icon type="close-circle" theme="twoTone" />
                     </Col>
                   </Option>
-                  <Option value="high">high</Option>
+                  <Option value="high">High</Option>
                   <Option value="medium">Medium</Option>
-                  <Option value="law">Low</Option>
+                  <Option value="Law">Law</Option>
                   <Option value="" />
                 </Select>
               </Col>
@@ -87,10 +82,6 @@ export default class Config extends Component {
             </Row>
           </Col>
         </Row>
-        <Severityconfiguration />
-        <Priorityconfiguration />
-        <Statusconfiguration />
-        <Module />
       </div>
     );
   }
